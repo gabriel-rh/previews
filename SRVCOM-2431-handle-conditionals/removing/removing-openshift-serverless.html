@@ -1,0 +1,914 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8"> <![endif]-->
+<!--[if IE 9]> <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  
+  
+  <title>Removing Serverless overview | Removing Serverless | OpenShift Serverless Branch Build</title>
+  <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" media="screen"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet"  media="screen"/>
+  <link href="https://assets.openshift.net/content/subdomain/touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+  <link href="https://assets.openshift.net/content/subdomain/favicon32x32.png" rel="shortcut icon" type="text/css"/>
+  <link href="https://assets.openshift.net/content/osh-nav-footer.css" rel="stylesheet" type="text/css" media="screen"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/docs.css" rel="stylesheet"  media="screen"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/print.css" rel="stylesheet" type="text/css" media="print"/>
+  <!--[if IE]><link rel="shortcut icon" href="https://assets.openshift.net/content/subdomain/favicon.ico"><![endif]-->
+  <!-- or, set /favicon.ico for IE10 win -->
+  <meta content="OpenShift" name="application-name">
+  <meta content="#000000" name="msapplication-TileColor">
+  <meta content="https://assets.openshift.net/content/subdomain/touch-icon-precomposed.png" name="msapplication-TileImage">
+
+  <!-- Adobe DTM -->
+  <script src="//www.redhat.com/dtm.js" type="text/javascript"></script>
+  <!-- End Adobe DTM -->
+
+  <script id="trustarc" src="https://static.redhat.com/libs/redhat/marketing/latest/trustarc/trustarc.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+        rel="stylesheet">
+
+</head>
+
+<body onload="selectVersion('Branch Build');">
+  
+<nav id="main">
+  <div class="container">
+    <div class="row">
+      <div class="navbar navbar-default navbar-openshift" role="navigation">
+        <div class="navbar-header">
+            <a href="#nav-main" class="dropdown-toggle navbar-menu-toggle hidden visible-xs" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+          <a class="navbar-brand" href="/"></a>
+        </div>
+        <div id="nav-main" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li id="products" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                Products <span class="fa fa-angle-down"></span>
+              </a>
+              <div class="dropdown-menu">
+                <div class="row flex-column flex-md-row">
+                  <div class="col-xs-12 col-sm-3">
+                    <h3>Overview</h3>
+                    <ul class="nav flex-column">
+                      <li><a target="_blank" href="https://www.openshift.com/products/features/">Features</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/products/pricing/">Pricing</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-12 col-sm-9">
+                    <h3>Featured Products</h3>
+                    <ul class="nav">
+                      <li>
+                        <a target="_blank" href="https://www.openshift.com/products/container-platform/">Red Hat OpenShift Container&nbsp;Platform</a>
+                        <p class="d-none d-md-block">Build, deploy and manage your applications across cloud- and on-premise infrastructure</p>
+                      </li>
+                      <li>
+                        <a target="_blank" href="https://www.openshift.com/products/dedicated/">Red Hat OpenShift Dedicated</a>
+                        <p class="d-none d-md-block">Single-tenant, high-availability Kubernetes clusters in the public cloud</p>
+                      </li>
+
+                      <li>
+                        <a target="_blank" href="https://www.openshift.com/products/online/">Red Hat OpenShift Online</a>
+                        <p class="d-none d-md-block">The fastest way for developers to build, host and scale applications in the public cloud</p>
+                      </li>
+
+                      <li class="nav-item">
+                        <a target="_blank" href="https://www.openshift.com/products/">All products <span class="fa fa-angle-right"></span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li id="learn" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Learn <span class="fa fa-angle-down"></span>
+              </a>
+              <div class="dropdown-menu">
+                <div class="row flex-md-nowrap">
+                  <div class="col-xs-12 col-sm-6">
+                    <h3>Learn</h3>
+                    <ul class="nav">
+                      <li><a target="_blank" href="https://www.openshift.com/learn/what-is-openshift/">What is OpenShift</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/get-started/">Get started</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/partners/">Partners</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/success-stories/">Customer success stories</a></li>
+                      <li><a target="_blank" href="https://blog.openshift.com">Blog</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/resources/">Resources</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-12 col-sm-6">
+                    <h3>Technology Topics</h3>
+                    <ul class="nav">
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/knative/">Knative</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/security/">Security</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/kubernetes/">Kubernetes</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/service-brokers/">Service Brokers</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Community <span class="fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a target="_blank" href="https://commons.openshift.org">OpenShift Commons</a></li>
+                <li><a target="_blank" href="https://www.okd.io">Open Source (OKD)</a></li>
+                <li><a target="_blank" href="https://www.openshift.com/community/programs/startups/">Startups</a></li>
+                <li><a target="_blank" href="https://www.openshift.com/community/programs/grants/">Grants</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Support <span class="fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a target="_blank" href="https://help.openshift.com">Help Center</a></li>
+                <li><a href="https://docs.openshift.com">OpenShift Docs</a></li>
+              </ul>
+            </li>
+
+            <li><a target="_blank" class="nav-sign-up" href="https://www.openshift.com/trial/">Free Trial</a></li>
+
+            <li><a target="_blank" href="https://console.redhat.com/openshift" class="nav-sign-in">Log In <span class="fa fa-angle-right"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container">
+    <button id="hc-open-btn" class="open-btn-sm" onclick="openNav()" aria-label="Open"><span class="fa fa-bars" /></button>
+    <ol class="breadcrumb hide-for-print">
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="sitename">
+        <a href="/">
+          Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        
+          
+              
+                <a href="../about/serverless-release-notes.html">OpenShift Serverless Branch Build</a>
+              
+        
+        
+      </li>
+      <li class="hidden-xs active">
+        <a href="../removing/removing-openshift-serverless.html">Removing Serverless</a>
+      </li>
+      
+      
+      <li class="hidden-xs active">
+        Removing Serverless overview
+      </li>
+      
+      <span text-align="right" style="float: right !important">
+        <a href="https://github.com/openshift/openshift-docs/commits/main/removing/removing-openshift-serverless.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
+        
+        <a href="https://issues.redhat.com/secure/CreateIssueDetails!init.jspa?pid=12332330&issuetype=1&components=12367614&priority=4&summary=Issue+in+file+removing/removing-openshift-serverless.adoc">
+          <span class="material-icons-outlined" title="Open an issue">bug_report</span>
+        </a>
+        <a href="javascript: void(0);" onclick="window.print()"><span class="material-icons-outlined" title="Print page (Save as PDF)">picture_as_pdf</span></a>
+        
+        
+      </span>
+      
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas hide-for-print">
+        <div class="row-fluid">
+          <div id="btn-close">
+            <button id="hc-close-btn" onclick="closeNav()" class="close-btn-sm" aria-label="close"><span class="fa fa-times" /></button>
+          </div>
+          <div id="hc-search">
+            <input id="hc-search-input" type="text" aria-label="search">
+            <button id="hc-search-btn" aria-label="search"><span class="fa fa-search" /></button>
+          </div>
+        </div>
+        <ul class="nav nav-sidebar">
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup0"><span id="tgSpan0" class="fa fa-angle-right"></span>About Serverless</a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../about/serverless-release-notes.html">Release notes</a></li>
+            <li><a class="" href="../about/about-serverless.html">Serverless overview</a></li>
+            <li><a class="" href="../about/about-knative-serving.html">Knative Serving overview</a></li>
+            <li><a class="" href="../about/about-knative-eventing.html">Knative Eventing overview</a></li>
+            <li><a class="" href="../about/serverless-functions-about.html">Serverless Functions overview</a></li>
+            <li><a class="" href="../about/serverless-support.html">Serverless support</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup1"><span id="tgSpan1" class="fa fa-angle-right"></span>Installing Serverless</a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../install/preparing-serverless-install.html">Preparing to install OpenShift Serverless</a></li>
+            <li><a class="" href="../install/install-serverless-operator.html">Installing the Serverless Operator</a></li>
+            <li><a class="" href="../install/installing-kn.html">Installing the Knative CLI</a></li>
+            <li><a class="" href="../install/installing-knative-serving.html">Installing Knative Serving</a></li>
+            <li><a class="" href="../install/installing-knative-eventing.html">Installing Knative Eventing</a></li>
+            <li><a class="" href="../install/serverless-kafka-admin.html">Configuring Knative for Apache Kafka</a></li>
+            <li><a class="" href="../install/configuring-serverless-functions.html">Configuring Serverless Functions</a></li>
+            <li><a class="" href="../install/serverless-upgrades.html">Serverless upgrades</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup2"><span id="tgSpan2" class="fa fa-angle-right"></span>Serving</a>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-0"><span id="sgSpan-2-0" class="fa fa-caret-right"></span>&nbsp;Getting started with Knative Serving</a>
+              <ul id="topicSubGroup-2-0" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/getting-started/serverless-applications.html">Creating Serverless applications</a></li>
+                  <li><a class="" href="../knative-serving/getting-started/verifying-application-deployment.html">Verifying application deployment</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-1"><span id="sgSpan-2-1" class="fa fa-caret-right"></span>&nbsp;Autoscaling</a>
+              <ul id="topicSubGroup-2-1" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/autoscaling/serverless-autoscaling-developer.html">Autoscaling overview</a></li>
+                  <li><a class="" href="../knative-serving/autoscaling/serverless-autoscaling-developer-scale-bounds.html">Scale bounds</a></li>
+                  <li><a class="" href="../knative-serving/autoscaling/serverless-concurrency.html">Concurrency</a></li>
+                  <li><a class="" href="../knative-serving/autoscaling/serverless-autoscaling-scale-to-zero.html">Scale-to-zero</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-2"><span id="sgSpan-2-2" class="fa fa-caret-right"></span>&nbsp;Configuring Serverless applications</a>
+              <ul id="topicSubGroup-2-2" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/config-applications/overriding-config-serving.html">Overriding system deployment configurations</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/multi-container-support-for-serving.html">Multi-container support</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/empty-dir.html">EmptyDir volumes</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/pvcs-for-serving.html">Persistent Volume Claims</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/init-containers.html">Init containers</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/resolving-image-tags-to-digests.html">Resolving image tags to digests</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/serverless-config-tls.html">Configuring TLS authentication</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/restrictive-network-policies.html">Restrictive network policies</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-3"><span id="sgSpan-2-3" class="fa fa-caret-right"></span>&nbsp;Traffic splitting</a>
+              <ul id="topicSubGroup-2-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-overview.html">Traffic splitting overview</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-spec-examples.html">Traffic spec examples</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-using-cli.html">Traffic splitting using the CLI</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-flags.html">CLI flags for traffic splitting</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-revisions.html">Splitting traffic between revisions</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-blue-green.html">Reroute traffic using blue-green strategy</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-4"><span id="sgSpan-2-4" class="fa fa-caret-right"></span>&nbsp;External and Ingress routing</a>
+              <ul id="topicSubGroup-2-4" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/external-ingress-routing/routing-overview.html">Routing overview</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/customize-labels-annotations-routes.html">Customizing labels and annotations</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/configuring-service-routes.html">Configuring routes for Knative services</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/https-redirect-global.html">Global HTTPS redirection</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/url-scheme-external-routes.html">URL scheme for external routes</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/https-redirect-per-service.html">HTTPS redirection per service</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/cluster-local-availability.html">Cluster local availability</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/kourier-gateway-service-type.html">Kourier Gateway service type</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/using-http2-gRPC.html">Using HTTP2 and gRPC</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-5"><span id="sgSpan-2-5" class="fa fa-caret-right"></span>&nbsp;Configuring access to Knative services</a>
+              <ul id="topicSubGroup-2-5" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/config-access/serverless-ossm-with-kourier-jwt.html">Configuring JSON Web Token authentication for Knative services</a></li>
+                  <li><a class="" href="../knative-serving/config-access/serverless-ossm-v2x-jwt.html">Using JSON Web Token authentication with Service Mesh 2.x</a></li>
+                  <li><a class="" href="../knative-serving/config-access/serverless-ossm-v1x-jwt.html">Using JSON Web Token authentication with Service Mesh 1.x</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-6"><span id="sgSpan-2-6" class="fa fa-caret-right"></span>&nbsp;Configuring custom domains for Knative services</a>
+              <ul id="topicSubGroup-2-6" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/config-custom-domains/serverless-custom-domains.html">Configuring custom domains overview</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/create-domain-mapping.html">Custom domain mapping</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/create-domain-mapping-kn.html">Custom domains using the Knative CLI</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/domain-mapping-odc-developer.html">Domain mapping using the Developer perspective</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/domain-mapping-odc-admin.html">Domain mapping using the Administrator perspective</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/domain-mapping-custom-tls-cert.html">Securing a mapped service using a TLS certificate</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-7"><span id="sgSpan-2-7" class="fa fa-caret-right"></span>&nbsp;Configuring high availability for Knative services</a>
+              <ul id="topicSubGroup-2-7" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/config-ha-services/ha-services-overview.html">High availability for Knative services overview</a></li>
+                  <li><a class="" href="../knative-serving/config-ha-services/ha-replicas-serving.html">High availability for Knative services</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup3"><span id="tgSpan3" class="fa fa-angle-right"></span>Eventing</a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../eventing/knative-eventing.html">Knative Eventing</a></li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-1"><span id="sgSpan-3-1" class="fa fa-caret-right"></span>&nbsp;Event sources</a>
+              <ul id="topicSubGroup-3-1" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/event-sources/knative-event-sources.html">Event sources overview</a></li>
+                  <li><a class="" href="../eventing/event-sources/event-source-admin-perspective.html">Event source in the Administrator perspective</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-apiserversource.html">Creating an API server source</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-pingsource.html">Creating a ping source</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-kafka-developer-source.html">Source for Apache Kafka</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-custom-event-sources.html">Custom event sources</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-sink-source-odc.html">Connecting an event source to a sink using the Developer perspective</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-2"><span id="sgSpan-3-2" class="fa fa-caret-right"></span>&nbsp;Event sinks</a>
+              <ul id="topicSubGroup-3-2" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/event-sinks/serverless-event-sinks.html">Event sinks overview</a></li>
+                  <li><a class="" href="../eventing/event-sinks/serverless-creating-sinks.html">Creating event sinks</a></li>
+                  <li><a class="" href="../eventing/event-sinks/serverless-kafka-developer-sink.html">Sink for Apache Kafka</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-3"><span id="sgSpan-3-3" class="fa fa-caret-right"></span>&nbsp;Brokers</a>
+              <ul id="topicSubGroup-3-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/brokers/serverless-brokers.html">Brokers overview</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-broker-types.html">Broker types</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-using-brokers.html">Creating brokers</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-broker-backing-channel-default.html">Configuring the default broker backing channel</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-global-config-broker-class-default.html">Configuring the default broker class</a></li>
+                  <li><a class="" href="../eventing/brokers/kafka-broker.html">Knative broker for Apache Kafka</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-using-brokers-managing-brokers.html">Managing brokers</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-event-delivery.html">Event delivery</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-4"><span id="sgSpan-3-4" class="fa fa-caret-right"></span>&nbsp;Triggers</a>
+              <ul id="topicSubGroup-3-4" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/triggers/serverless-triggers.html">Triggers overview</a></li>
+                  <li><a class="" href="../eventing/triggers/create-triggers.html">Creating triggers</a></li>
+                  <li><a class="" href="../eventing/triggers/list-triggers-cli.html">List triggers from the command line</a></li>
+                  <li><a class="" href="../eventing/triggers/describe-triggers-cli.html">Describe triggers from the command line</a></li>
+                  <li><a class="" href="../eventing/triggers/connect-trigger-sink.html">Connecting a trigger to a sink</a></li>
+                  <li><a class="" href="../eventing/triggers/filter-triggers-cli.html">Filtering triggers from the command line</a></li>
+                  <li><a class="" href="../eventing/triggers/update-triggers-cli.html">Updating triggers from the command line</a></li>
+                  <li><a class="" href="../eventing/triggers/delete-triggers-cli.html">Deleting triggers from the command line</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-5"><span id="sgSpan-3-5" class="fa fa-caret-right"></span>&nbsp;Channels</a>
+              <ul id="topicSubGroup-3-5" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/channels/serverless-channels.html">Channels and subscriptions</a></li>
+                  <li><a class="" href="../eventing/channels/serverless-creating-channels.html">Creating channels</a></li>
+                  <li><a class="" href="../eventing/channels/connecting-channels-sinks.html">Connecting channels to sinks</a></li>
+                  <li><a class="" href="../eventing/channels/serverless-channel-default.html">Default channel implementation</a></li>
+                  <li><a class="" href="../eventing/channels/serverless-kafka-admin-security-channels.html">Security configuration for channels</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-6"><span id="sgSpan-3-6" class="fa fa-caret-right"></span>&nbsp;Subscriptions</a>
+              <ul id="topicSubGroup-3-6" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/subscriptions/serverless-subs.html">Creating subscriptions</a></li>
+                  <li><a class="" href="../eventing/subscriptions/serverless-subs-managing.html">Managing subscriptions</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-7"><span id="sgSpan-3-7" class="fa fa-caret-right"></span>&nbsp;Event discovery</a>
+              <ul id="topicSubGroup-3-7" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/discovery/serverless-listing-event-sources.html">Listing event sources and event source types</a></li>
+                  <li><a class="" href="../eventing/discovery/list-event-source-types-cli.html">Listing event source types from the command line</a></li>
+                  <li><a class="" href="../eventing/discovery/list-event-source-types-odc.html">Listing event source types from the Developer perspective</a></li>
+                  <li><a class="" href="../eventing/discovery/list-event-sources-cli.html">Listing event sources from the command line</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-8"><span id="sgSpan-3-8" class="fa fa-caret-right"></span>&nbsp;Tuning eventing configuration</a>
+              <ul id="topicSubGroup-3-8" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/tuning/overriding-config-eventing.html">Overriding deployment configurations</a></li>
+                  <li><a class="" href="../eventing/tuning/serverless-ha.html">High availability</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup4"><span id="tgSpan4" class="fa fa-angle-right"></span>Functions</a>
+      <ul id="topicGroup4" class="collapse  list-unstyled">
+            <li><a class="" href="../functions/serverless-functions-setup.html">Setting up OpenShift Serverless Functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-getting-started.html">Getting started with functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-on-cluster-builds.html">On-cluster function building and deploying</a></li>
+            <li><a class="" href="../functions/serverless-developing-quarkus-functions.html">Developing Quarkus functions</a></li>
+            <li><a class="" href="../functions/serverless-developing-nodejs-functions.html">Developing Node.js functions</a></li>
+            <li><a class="" href="../functions/serverless-developing-typescript-functions.html">Developing TypeScript functions</a></li>
+            <li><a class="" href="../functions/serverless-developing-python-functions.html">Developing Python functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-eventing.html">Using functions with Knative Eventing</a></li>
+            <li><a class="" href="../functions/serverless-functions-yaml.html">Function project configuration in func.yaml</a></li>
+            <li><a class="" href="../functions/serverless-functions-accessing-secrets-configmaps.html">Accessing secrets and config maps from functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-annotations.html">Adding annotations to functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-reference-guide.html">Functions development reference guide</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup5"><span id="tgSpan5" class="fa fa-angle-right"></span>Knative CLI</a>
+      <ul id="topicGroup5" class="collapse  list-unstyled">
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-0"><span id="sgSpan-5-0" class="fa fa-caret-right"></span>&nbsp;Knative Serving CLI commands</a>
+              <ul id="topicSubGroup-5-0" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../cli_tools/serving_cli/kn-service.html">kn service commands</a></li>
+                  <li><a class="" href="../cli_tools/serving_cli/kn-service-offline.html">kn service commands in offline mode</a></li>
+                  <li><a class="" href="../cli_tools/serving_cli/kn-container.html">kn container commands</a></li>
+                  <li><a class="" href="../cli_tools/serving_cli/kn-domain.html">kn domain commands</a></li>              </ul>
+            </li>
+            <li><a class="" href="../cli_tools/advanced-kn-config.html">Configuring the Knative CLI</a></li>
+            <li><a class="" href="../cli_tools/kn-plugins.html">Knative CLI plugins</a></li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-3"><span id="sgSpan-5-3" class="fa fa-caret-right"></span>&nbsp;Knative Eventing CLI commands</a>
+              <ul id="topicSubGroup-5-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../cli_tools/eventing_cli/kn-source.html">kn source commands</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-4"><span id="sgSpan-5-4" class="fa fa-caret-right"></span>&nbsp;Knative Functions CLI commands</a>
+              <ul id="topicSubGroup-5-4" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../cli_tools/functions_cli/kn-functions.html">kn functions commands</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup6"><span id="tgSpan6" class="fa fa-angle-right"></span>Observability</a>
+      <ul id="topicGroup6" class="collapse  list-unstyled">
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-0"><span id="sgSpan-6-0" class="fa fa-caret-right"></span>&nbsp;Administrator metrics</a>
+              <ul id="topicSubGroup-6-0" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../observability/admin-metrics/serverless-admin-metrics.html">Administrator metrics overview</a></li>
+                  <li><a class="" href="../observability/admin-metrics/serverless-controller-metrics.html">Controller metrics</a></li>
+                  <li><a class="" href="../observability/admin-metrics/serverless-webhook-metrics.html">Webhook metrics</a></li>
+                  <li><a class="" href="../observability/admin-metrics/serverless-admin-metrics-eventing.html">Knative Eventing metrics</a></li>
+                  <li><a class="" href="../observability/admin-metrics/serverless-admin-metrics-serving.html">Knative Serving metrics</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-1"><span id="sgSpan-6-1" class="fa fa-caret-right"></span>&nbsp;Developer metrics</a>
+              <ul id="topicSubGroup-6-1" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../observability/developer-metrics/serverless-developer-metrics.html">Developer metrics overview</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-monitoring-services-default-metrics.html">Default Knative service metrics</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-monitoring-services-custom-metrics.html">Custom Knative service metrics</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-monitoring-services-configuration-scraping.html">Configuration for scraping custom metrics</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-monitoring-services-examining-metrics.html">Examining metrics of a service</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-developer-metrics-dashboard.html">Dashboard for service metrics</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-2"><span id="sgSpan-6-2" class="fa fa-caret-right"></span>&nbsp;Cluster logging</a>
+              <ul id="topicSubGroup-6-2" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../observability/cluster-logging/cluster-logging-serverless.html">Using OpenShift Logging with Serverless</a></li>
+                  <li><a class="" href="../observability/cluster-logging/finding-serving-logs-components.html">Finding logs for Knative Serving components</a></li>
+                  <li><a class="" href="../observability/cluster-logging/finding-serving-logs-services.html">Finding logs for Knative Serving services</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-3"><span id="sgSpan-6-3" class="fa fa-caret-right"></span>&nbsp;Tracing</a>
+              <ul id="topicSubGroup-6-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../observability/tracing/serverless-tracing.html">Tracing requests</a></li>
+                  <li><a class="" href="../observability/tracing/serverless-tracing-open-telemetry.html">Using Red Hat OpenShift distributed tracing</a></li>
+                  <li><a class="" href="../observability/tracing/serverless-tracing-jaeger.html">Using Jaeger distributed tracing</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup7"><span id="tgSpan7" class="fa fa-angle-right"></span>Integrations</a>
+      <ul id="topicGroup7" class="collapse  list-unstyled">
+            <li><a class="" href="../integrations/serverless-ossm-setup.html">Integrating Service Mesh with OpenShift Serverless</a></li>
+            <li><a class="" href="../integrations/serverless-cost-management-integration.html">Integrating Serverless with the cost management service</a></li>
+            <li><a class="" href="../integrations/gpu-resources.html">Using NVIDIA GPU resources with serverless applications</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup8"><span id="tgSpan8" class="fa fa-angle-down"></span>Removing Serverless</a>
+      <ul id="topicGroup8" class="collapse in list-unstyled">
+            <li><a class=" active" href="../removing/removing-openshift-serverless.html">Removing Serverless overview</a></li>
+            <li><a class="" href="../removing/uninstalling-knative-eventing.html">Uninstalling Knative Eventing</a></li>
+            <li><a class="" href="../removing/uninstalling-knative-serving.html">Uninstalling Knative Serving</a></li>
+            <li><a class="" href="../removing/removing-serverless-operator.html">Removing Serverless Operator</a></li>
+            <li><a class="" href="../removing/deleting-serverless-crds.html">Deleting Serverless CRDs</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div id="hc-search-modal">
+        <div id="hc-modal-content">
+          <span id="hc-modal-close">&times;</span>
+          <div id="hc-search-results-wrapper">
+            <div id="hc-search-results"></div>
+            <div id="hc-search-progress-indicator" class="text-center search-progress-indicator"><i class="fa fa-circle-o-notch fa-spin" style="font-size:42px"></i></div>
+            <div class="text-center">
+              <button id="hc-search-more-btn">Show more results</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="print-logo" style="display:none;">
+        <img src="https://www.redhat.com/cms/managed-files/Logo-Red_Hat-OpenShift-A-Standard-RGB_0_0.svg" alt="print logo"/>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h1>
+            Removing OpenShift Serverless overview
+          </h1>
+        </div>
+        
+        
+        <div class="paragraph">
+<p>If you need to remove OpenShift Serverless from your cluster, you can do so by manually removing the OpenShift Serverless Operator and other OpenShift Serverless components. Before you can remove the OpenShift Serverless Operator, you must remove Knative Serving and Knative Eventing.</p>
+</div>
+<div class="paragraph">
+<p>After uninstalling the OpenShift Serverless, you can remove the Operator and API custom resource definitions (CRDs) that remain on the cluster.</p>
+</div>
+<div class="paragraph">
+<p>The steps for fully removing OpenShift Serverless are detailed in the following procedures:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../removing/uninstalling-knative-eventing.html#uninstalling-knative-eventing">Uninstalling Knative Eventing</a>.</p>
+</li>
+<li>
+<p><a href="../removing/uninstalling-knative-serving.html#uninstalling-knative-serving">Uninstalling Knative Serving</a>.</p>
+</li>
+<li>
+<p><a href="../removing/removing-serverless-operator.html#removing-serverless-operator">Removing the OpenShift Serverless Operator</a>.</p>
+</li>
+<li>
+<p><a href="../removing/deleting-serverless-crds.html#deleting-serverless-crds">Deleting OpenShift Serverless custom resource definitions</a>.</p>
+</li>
+</ul>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://assets.openshift.net/content/modernizr.js" type="text/javascript"></script>
+  <script src="https://assets.openshift.net/content/subdomain.js" type="text/javascript"></script>
+  <script src="https://assets.openshift.net/content/nav-tertiary.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/reformat-html.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/hc-search.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/page-loader.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/clipboard.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/collapsible.js" type="text/javascript"></script>
+  <script>
+  var dk = 'openshift-serverless';
+  var version = 'Branch Build';
+
+  var distros = {
+    'openshift-origin': ['docs_origin', version],
+    // specific labels are used for OSD instead of the URL filter, due to its unusual URL structure; assume v4
+    'openshift-dedicated': ['docs_dedicated_v4'],
+    'openshift-online': ['docs_online', version],
+    'openshift-enterprise': ['docs_cp', version],
+    'openshift-aro' : ['docs_aro', version],
+    'openshift-rosa' : ['docs_rosa'],
+    'openshift-acs' : ['docs_acs', version]
+  };
+
+  // only OSD v3 docs have the version variable specified
+  if (dk == "openshift-dedicated" && version == "3") {
+    distros['openshift-dedicated'] = ['docs_dedicated_v3']
+  }
+
+  distros[dk] ? hcSearchCategory.apply(null, distros[dk]) : hcSearchCategory("docs");
+  </script>
+  <script type="text/javascript">
+  /*<![CDATA[*/
+  $(document).ready(function() {
+    $("[id^='topicGroup']").on('show.bs.collapse', function(event) {
+      if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+        $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+      }
+    });
+    $("[id^='topicGroup']").on('hide.bs.collapse', function(event) {
+      if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+        $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+      }
+    });
+    $("[id^='topicSubGroup']").on('show.bs.collapse', function() {
+      $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+    $("[id^='topicSubGroup']").on('hide.bs.collapse', function() {
+      $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+    $("[id^='topicSubSubGroup']").on('show.bs.collapse', function() {
+      $(this).parent().find("[id^='ssgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+    $("[id^='topicSubSubGroup']").on('hide.bs.collapse', function() {
+      $(this).parent().find("[id^='ssgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+
+    const collapsibleContent = document.getElementsByTagName("details");
+    for (var i = 0; i < collapsibleContent.length; i++) {
+      collapsibleContent[i].setAttribute("open", "");
+    }
+
+  });
+  /*]]>*/
+  </script>
+
+  <footer id="rh">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-2">
+                <img src="https://assets.openshift.com/hubfs/images/logos/Logo-RedHat-A-Reverse-RGB.svg" class="img-fluid" alt="Red Hat" style="height: 30px;">
+            </div>
+
+            <div class="col-sm-3">
+              <p class="text-nowrap">Copyright © 2023 Red Hat, Inc.</p>
+            </div>
+
+
+
+            <div class="col">
+                <nav class="nav">
+                    <a target="_blank" href="https://www.redhat.com/en/about/privacy-policy" class="nav-link">Privacy statement</a>
+                    <a target="_blank" href="https://www.openshift.com/legal/terms/" class="nav-link">Terms of use</a>
+                    <a target="_blank" href="https://www.redhat.com/en/about/all-policies-guidelines" class="nav-link">All policies and guidelines</a>
+                    <a id="teconsent"></a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="consent_blackbar" style="z-index: 100; position: fixed"></div>
+
+
+
+<!-- Adobe DTM -->
+<script type="text/javascript">
+if (("undefined" !== typeof _satellite) && ("function" === typeof _satellite.pageBottom)) {
+   _satellite.pageBottom();
+}
+</script>
+<!-- End Adobe DTM -->
+
+  <!-- adjust page css based on breadcrumb and/or resize -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => {
+      if ($(window).width() >= 1008) {
+        adjustSide();
+        adjustToc();
+        adjustMain();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if ($(window).width() >= 1008) {
+        adjustSide();
+        adjustToc();
+        adjustMain();
+      } else if ($(window).width() < 1008) {
+        sidebar.classList.remove('wide');
+        document.querySelector('#hc-search').classList.remove('wide');
+        if (sidebar.classList.contains('open')) {
+          sidebar.style.display = 'block';
+        } else {
+          sidebar.style.display = 'none';
+        }
+        document.querySelector('.main').style.paddingTop = '0px';
+      }
+    });
+
+    function adjustSide() {
+      sidebar.classList.add('wide');
+      document.querySelector('#hc-search').classList.add('wide');
+      sidebar.style.display = 'block';
+      document.querySelector('.sidebar').style.top = parseInt((document.querySelector('.breadcrumb').offsetHeight + 125), 10) + "px";
+      document.querySelector('#hc-search').style.top = parseInt((document.querySelector('.breadcrumb').offsetHeight + 95), 10) + "px";
+    }
+
+    function adjustToc() {
+      if (document.querySelector('#toc') !== null) {
+        document.querySelector('#toc').style.top = parseInt((document.querySelector('.breadcrumb').offsetHeight + 90), 10) + "px";
+      }
+    }
+
+    function adjustMain() {
+      document.querySelector('html').style.scrollPaddingTop = parseInt((document.querySelector('.breadcrumb').offsetHeight + 90), 10) + "px";
+      document.querySelector('.main').style.paddingTop = parseInt((document.querySelector('.breadcrumb').offsetHeight - 70), 10) + "px";
+    }
+
+  </script>
+
+  <!-- remove toc active class when page is loaded -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => {
+      var tocItems = $("#toc a");
+
+      for (let i = 0; i < tocItems.length; i++) {
+        tocItems[i].classList.remove("toc-active");
+      }
+    })
+  </script>
+
+  <!-- maintain sidebar scroll position between page loads -->
+  <script type="text/javascript">
+    let sidebar = document.querySelector(".sidebar");
+    let scrolltop = localStorage.getItem("sidebar-scroll");
+
+    if (scrolltop == null) {
+      sidebar.scrollTop = parseInt(top, 10);
+    }
+
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("sidebar-scroll", sidebar.scrollTop);
+    });
+
+    window.addEventListener('load', () => {
+      sidebar.scrollTo(0, scrolltop)
+    })
+  </script>
+
+  <!-- open/close the nav -->
+  <script type="text/javascript">
+    function closeNav() {
+      let sidebar = document.querySelector(".sidebar");
+      sidebar.style.display = "none";
+      sidebar.classList.remove('open');
+    }
+
+    function openNav() {
+      let sidebar = document.querySelector(".sidebar");
+      let hc_search = document.querySelector('#hc-search');
+      sidebar.style.display = "block";
+      sidebar.style.top = "0px";
+      hc_search.style.top = 'unset';
+      sidebar.classList.add('open');
+    }
+  </script>
+
+  <!-- clear and add toc-active to clicked toc link -->
+  <script type="text/javascript">
+  $("#toc a").click(function() {
+    var tocItems = $("#toc a");
+    for (let i = 0; i < tocItems.length; i++) {
+      tocItems[i].classList.remove("toc-active");
+    }
+    this.classList.add("toc-active");
+  });
+  </script>
+
+  <!-- update active toc class when mouse scrolls -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener("wheel", () => {
+
+        const ioConfiguration = {
+          "rootMargin": "-120px 0px -400px 0px",
+          "threshold": 0
+        };
+
+        const observer = new IntersectionObserver(setCurrent, ioConfiguration, entries => {
+          entries.forEach(entry => {
+            var id = entry.target.getAttribute('id');
+            //fight with js
+            document.querySelector(`#toc li a[href="#${id}"]`).classList.remove('toc-active');
+          });
+        });
+
+        //track all h1-4 headings that have an id
+        document.querySelectorAll('.main h2[id], .main h3[id]').forEach((h) => {
+          observer.observe(h);
+        });
+
+        //runs when the IntersectionObserver fires
+        function setCurrent(e) {
+          var allTocLinks = document.querySelectorAll("#toc li a");
+          if (allTocLinks !== undefined) {
+            e.map(i => {
+              if (i.isIntersecting && i.intersectionRatio >= 1) {
+                allTocLinks.forEach(link => link.classList.remove("toc-active"));
+                document.querySelector(`#toc li a[href="#${i.target.id}"]`).classList.add('toc-active')
+              }
+            })
+          }
+        };
+
+        //make clicked toc item active and stop IntersectionObserver
+        $("#toc a").click(function() {
+          //stop tracking all h1-4 headings that have an id
+          document.querySelectorAll('.main h2[id], .main h3[id]').forEach((h) => {
+            observer.unobserve(h);
+          });
+          var tocItems = $("#toc a");
+          if (tocItems !== undefined) {
+            for (let i = 0; i < tocItems.length; i++) {
+              tocItems[i].classList.remove("toc-active");
+            };
+            this.classList.add("toc-active");
+          }
+        })
+      })
+    })
+  </script>
+
+  <!--handle page scroll top and bottom, add toc-active -->
+  <script type="text/javascript">
+    document.addEventListener('scroll', () => {
+      //scroll to bottom
+      if(document.documentElement.scrollHeight === window.pageYOffset + window.innerHeight) {
+        var tocItems = $("#toc a");
+        for (let i = 0; i < tocItems.length; i++) {
+          tocItems[i].classList.remove("toc-active")
+          };
+          tocItems[tocItems.length - 1].classList.add("toc-active");
+        };
+      //scroll to top
+      if(window.pageYOffset === 0) {
+        var tocItems = $("#toc a");
+        for (let i = 0; i < tocItems.length; i++) {
+          tocItems[i].classList.remove("toc-active");
+          };
+          tocItems[0].classList.add("toc-active");
+        };
+      })
+  </script>
+
+  <!--adjust sidebar and toc when footer is displayed -->
+  <script type="text/javascript">
+    sidebar = document.querySelector('.sidebar')
+    toc = document.querySelector('#toc')
+    main = document.querySelector('.main')
+    okd_footer = document.querySelector('.footer-origin-docs')
+
+    //handle short pages
+    if (window.innerHeight === document.documentElement.scrollHeight) {
+      //sidebar
+      if (sidebar !== null && okd_footer == null) {
+        sidebar.style.marginBottom = "38px";
+        main.style.marginBottom = "35px";
+      };
+      //okd sidebar
+      if(sidebar !== null && okd_footer !== null) {
+        sidebar.style.marginBottom = "176px";
+        main.style.marginBottom = "135px";
+      }
+    };
+
+    //handle scrolling pages
+    document.addEventListener('scroll', () => {
+      //scroll to bottom
+      if ($(window).width() >= 1008) {
+        if(sidebar !== null) {
+          //pages with multiple toc entries
+          if(document.documentElement.scrollHeight === window.pageYOffset + window.innerHeight) {
+              //sidebar
+              if (sidebar !== null && okd_footer == null){
+                sidebar.style.marginBottom = "38px";
+                main.style.marginBottom = "35px";
+              };
+              //toc
+              if (toc !== null && okd_footer == null){
+                toc.style.bottom = "35px";
+              };
+              //okd sidebar
+              if(sidebar !== null && okd_footer !== null) {
+                sidebar.style.marginBottom = "176px";
+                main.style.marginBottom = "135px";
+              };
+              //okd toc
+              if (toc !== null && okd_footer !== null){
+                toc.style.bottom = "175px";
+              };
+            };
+          if(document.documentElement.scrollHeight != window.pageYOffset + window.innerHeight) {
+            sidebar.style.marginBottom = "0px";
+            if (toc !== null) {
+              toc.style.bottom = "0px";
+            }
+          }
+        }
+      }
+    })
+  </script>
+
+  <!-- adjust alerts on mobile -->
+  <script type="text/javascript">
+    alert = document.querySelector('#support-alert')
+    window.addEventListener("wheel", () => {
+      if ($(window).width() < 1008) {
+        //adjust alert
+        if(window.pageYOffset > 0) {
+          if(alert !== null) {
+            document.querySelector('#support-alert').style.position = "fixed";
+            document.querySelector('#support-alert').style.bottom = "0px";
+            document.querySelector('#support-alert').style.margin = "5px";
+            document.querySelector('#support-alert').style.zIndex = "9999999";
+          }
+        }
+      }
+   });
+    window.addEventListener('resize', () => {
+      if ($(window).width() >= 1008) {
+        if(alert !== null) {
+          document.querySelector('#support-alert').style.removeProperty('position');
+          document.querySelector('#support-alert').style.removeProperty('bottom');
+          document.querySelector('#support-alert').style.removeProperty('margin');
+          document.querySelector('#support-alert').style.removeProperty('zIndex');
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>

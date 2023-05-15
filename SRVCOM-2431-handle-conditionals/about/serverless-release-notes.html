@@ -1,0 +1,2489 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8"> <![endif]-->
+<!--[if IE 9]> <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  
+  
+  <title>Release notes | About Serverless | OpenShift Serverless Branch Build</title>
+  <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" media="screen"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet"  media="screen"/>
+  <link href="https://assets.openshift.net/content/subdomain/touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+  <link href="https://assets.openshift.net/content/subdomain/favicon32x32.png" rel="shortcut icon" type="text/css"/>
+  <link href="https://assets.openshift.net/content/osh-nav-footer.css" rel="stylesheet" type="text/css" media="screen"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/docs.css" rel="stylesheet"  media="screen"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/print.css" rel="stylesheet" type="text/css" media="print"/>
+  <!--[if IE]><link rel="shortcut icon" href="https://assets.openshift.net/content/subdomain/favicon.ico"><![endif]-->
+  <!-- or, set /favicon.ico for IE10 win -->
+  <meta content="OpenShift" name="application-name">
+  <meta content="#000000" name="msapplication-TileColor">
+  <meta content="https://assets.openshift.net/content/subdomain/touch-icon-precomposed.png" name="msapplication-TileImage">
+
+  <!-- Adobe DTM -->
+  <script src="//www.redhat.com/dtm.js" type="text/javascript"></script>
+  <!-- End Adobe DTM -->
+
+  <script id="trustarc" src="https://static.redhat.com/libs/redhat/marketing/latest/trustarc/trustarc.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+        rel="stylesheet">
+
+</head>
+
+<body onload="selectVersion('Branch Build');">
+  
+<nav id="main">
+  <div class="container">
+    <div class="row">
+      <div class="navbar navbar-default navbar-openshift" role="navigation">
+        <div class="navbar-header">
+            <a href="#nav-main" class="dropdown-toggle navbar-menu-toggle hidden visible-xs" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+          <a class="navbar-brand" href="/"></a>
+        </div>
+        <div id="nav-main" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li id="products" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                Products <span class="fa fa-angle-down"></span>
+              </a>
+              <div class="dropdown-menu">
+                <div class="row flex-column flex-md-row">
+                  <div class="col-xs-12 col-sm-3">
+                    <h3>Overview</h3>
+                    <ul class="nav flex-column">
+                      <li><a target="_blank" href="https://www.openshift.com/products/features/">Features</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/products/pricing/">Pricing</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-12 col-sm-9">
+                    <h3>Featured Products</h3>
+                    <ul class="nav">
+                      <li>
+                        <a target="_blank" href="https://www.openshift.com/products/container-platform/">Red Hat OpenShift Container&nbsp;Platform</a>
+                        <p class="d-none d-md-block">Build, deploy and manage your applications across cloud- and on-premise infrastructure</p>
+                      </li>
+                      <li>
+                        <a target="_blank" href="https://www.openshift.com/products/dedicated/">Red Hat OpenShift Dedicated</a>
+                        <p class="d-none d-md-block">Single-tenant, high-availability Kubernetes clusters in the public cloud</p>
+                      </li>
+
+                      <li>
+                        <a target="_blank" href="https://www.openshift.com/products/online/">Red Hat OpenShift Online</a>
+                        <p class="d-none d-md-block">The fastest way for developers to build, host and scale applications in the public cloud</p>
+                      </li>
+
+                      <li class="nav-item">
+                        <a target="_blank" href="https://www.openshift.com/products/">All products <span class="fa fa-angle-right"></span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li id="learn" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Learn <span class="fa fa-angle-down"></span>
+              </a>
+              <div class="dropdown-menu">
+                <div class="row flex-md-nowrap">
+                  <div class="col-xs-12 col-sm-6">
+                    <h3>Learn</h3>
+                    <ul class="nav">
+                      <li><a target="_blank" href="https://www.openshift.com/learn/what-is-openshift/">What is OpenShift</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/get-started/">Get started</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/partners/">Partners</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/success-stories/">Customer success stories</a></li>
+                      <li><a target="_blank" href="https://blog.openshift.com">Blog</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/resources/">Resources</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-12 col-sm-6">
+                    <h3>Technology Topics</h3>
+                    <ul class="nav">
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/knative/">Knative</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/security/">Security</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/kubernetes/">Kubernetes</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/service-brokers/">Service Brokers</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Community <span class="fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a target="_blank" href="https://commons.openshift.org">OpenShift Commons</a></li>
+                <li><a target="_blank" href="https://www.okd.io">Open Source (OKD)</a></li>
+                <li><a target="_blank" href="https://www.openshift.com/community/programs/startups/">Startups</a></li>
+                <li><a target="_blank" href="https://www.openshift.com/community/programs/grants/">Grants</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Support <span class="fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a target="_blank" href="https://help.openshift.com">Help Center</a></li>
+                <li><a href="https://docs.openshift.com">OpenShift Docs</a></li>
+              </ul>
+            </li>
+
+            <li><a target="_blank" class="nav-sign-up" href="https://www.openshift.com/trial/">Free Trial</a></li>
+
+            <li><a target="_blank" href="https://console.redhat.com/openshift" class="nav-sign-in">Log In <span class="fa fa-angle-right"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container">
+    <button id="hc-open-btn" class="open-btn-sm" onclick="openNav()" aria-label="Open"><span class="fa fa-bars" /></button>
+    <ol class="breadcrumb hide-for-print">
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="sitename">
+        <a href="/">
+          Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        
+          
+              
+                <a href="../about/serverless-release-notes.html">OpenShift Serverless Branch Build</a>
+              
+        
+        
+      </li>
+      <li class="hidden-xs active">
+        <a href="../about/serverless-release-notes.html">About Serverless</a>
+      </li>
+      
+      
+      <li class="hidden-xs active">
+        Release notes
+      </li>
+      
+      <span text-align="right" style="float: right !important">
+        <a href="https://github.com/openshift/openshift-docs/commits/main/about/serverless-release-notes.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
+        
+        <a href="https://issues.redhat.com/secure/CreateIssueDetails!init.jspa?pid=12332330&issuetype=1&components=12367614&priority=4&summary=Issue+in+file+about/serverless-release-notes.adoc">
+          <span class="material-icons-outlined" title="Open an issue">bug_report</span>
+        </a>
+        <a href="javascript: void(0);" onclick="window.print()"><span class="material-icons-outlined" title="Print page (Save as PDF)">picture_as_pdf</span></a>
+        
+        
+      </span>
+      
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas hide-for-print">
+        <div class="row-fluid">
+          <div id="btn-close">
+            <button id="hc-close-btn" onclick="closeNav()" class="close-btn-sm" aria-label="close"><span class="fa fa-times" /></button>
+          </div>
+          <div id="hc-search">
+            <input id="hc-search-input" type="text" aria-label="search">
+            <button id="hc-search-btn" aria-label="search"><span class="fa fa-search" /></button>
+          </div>
+        </div>
+        <ul class="nav nav-sidebar">
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup0"><span id="tgSpan0" class="fa fa-angle-down"></span>About Serverless</a>
+      <ul id="topicGroup0" class="collapse in list-unstyled">
+            <li><a class=" active" href="../about/serverless-release-notes.html">Release notes</a></li>
+            <li><a class="" href="../about/about-serverless.html">Serverless overview</a></li>
+            <li><a class="" href="../about/about-knative-serving.html">Knative Serving overview</a></li>
+            <li><a class="" href="../about/about-knative-eventing.html">Knative Eventing overview</a></li>
+            <li><a class="" href="../about/serverless-functions-about.html">Serverless Functions overview</a></li>
+            <li><a class="" href="../about/serverless-support.html">Serverless support</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup1"><span id="tgSpan1" class="fa fa-angle-right"></span>Installing Serverless</a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../install/preparing-serverless-install.html">Preparing to install OpenShift Serverless</a></li>
+            <li><a class="" href="../install/install-serverless-operator.html">Installing the Serverless Operator</a></li>
+            <li><a class="" href="../install/installing-kn.html">Installing the Knative CLI</a></li>
+            <li><a class="" href="../install/installing-knative-serving.html">Installing Knative Serving</a></li>
+            <li><a class="" href="../install/installing-knative-eventing.html">Installing Knative Eventing</a></li>
+            <li><a class="" href="../install/serverless-kafka-admin.html">Configuring Knative for Apache Kafka</a></li>
+            <li><a class="" href="../install/configuring-serverless-functions.html">Configuring Serverless Functions</a></li>
+            <li><a class="" href="../install/serverless-upgrades.html">Serverless upgrades</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup2"><span id="tgSpan2" class="fa fa-angle-right"></span>Serving</a>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-0"><span id="sgSpan-2-0" class="fa fa-caret-right"></span>&nbsp;Getting started with Knative Serving</a>
+              <ul id="topicSubGroup-2-0" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/getting-started/serverless-applications.html">Creating Serverless applications</a></li>
+                  <li><a class="" href="../knative-serving/getting-started/verifying-application-deployment.html">Verifying application deployment</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-1"><span id="sgSpan-2-1" class="fa fa-caret-right"></span>&nbsp;Autoscaling</a>
+              <ul id="topicSubGroup-2-1" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/autoscaling/serverless-autoscaling-developer.html">Autoscaling overview</a></li>
+                  <li><a class="" href="../knative-serving/autoscaling/serverless-autoscaling-developer-scale-bounds.html">Scale bounds</a></li>
+                  <li><a class="" href="../knative-serving/autoscaling/serverless-concurrency.html">Concurrency</a></li>
+                  <li><a class="" href="../knative-serving/autoscaling/serverless-autoscaling-scale-to-zero.html">Scale-to-zero</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-2"><span id="sgSpan-2-2" class="fa fa-caret-right"></span>&nbsp;Configuring Serverless applications</a>
+              <ul id="topicSubGroup-2-2" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/config-applications/overriding-config-serving.html">Overriding system deployment configurations</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/multi-container-support-for-serving.html">Multi-container support</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/empty-dir.html">EmptyDir volumes</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/pvcs-for-serving.html">Persistent Volume Claims</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/init-containers.html">Init containers</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/resolving-image-tags-to-digests.html">Resolving image tags to digests</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/serverless-config-tls.html">Configuring TLS authentication</a></li>
+                  <li><a class="" href="../knative-serving/config-applications/restrictive-network-policies.html">Restrictive network policies</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-3"><span id="sgSpan-2-3" class="fa fa-caret-right"></span>&nbsp;Traffic splitting</a>
+              <ul id="topicSubGroup-2-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-overview.html">Traffic splitting overview</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-spec-examples.html">Traffic spec examples</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-using-cli.html">Traffic splitting using the CLI</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-flags.html">CLI flags for traffic splitting</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-revisions.html">Splitting traffic between revisions</a></li>
+                  <li><a class="" href="../knative-serving/traffic-splitting/traffic-splitting-blue-green.html">Reroute traffic using blue-green strategy</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-4"><span id="sgSpan-2-4" class="fa fa-caret-right"></span>&nbsp;External and Ingress routing</a>
+              <ul id="topicSubGroup-2-4" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/external-ingress-routing/routing-overview.html">Routing overview</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/customize-labels-annotations-routes.html">Customizing labels and annotations</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/configuring-service-routes.html">Configuring routes for Knative services</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/https-redirect-global.html">Global HTTPS redirection</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/url-scheme-external-routes.html">URL scheme for external routes</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/https-redirect-per-service.html">HTTPS redirection per service</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/cluster-local-availability.html">Cluster local availability</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/kourier-gateway-service-type.html">Kourier Gateway service type</a></li>
+                  <li><a class="" href="../knative-serving/external-ingress-routing/using-http2-gRPC.html">Using HTTP2 and gRPC</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-5"><span id="sgSpan-2-5" class="fa fa-caret-right"></span>&nbsp;Configuring access to Knative services</a>
+              <ul id="topicSubGroup-2-5" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/config-access/serverless-ossm-with-kourier-jwt.html">Configuring JSON Web Token authentication for Knative services</a></li>
+                  <li><a class="" href="../knative-serving/config-access/serverless-ossm-v2x-jwt.html">Using JSON Web Token authentication with Service Mesh 2.x</a></li>
+                  <li><a class="" href="../knative-serving/config-access/serverless-ossm-v1x-jwt.html">Using JSON Web Token authentication with Service Mesh 1.x</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-6"><span id="sgSpan-2-6" class="fa fa-caret-right"></span>&nbsp;Configuring custom domains for Knative services</a>
+              <ul id="topicSubGroup-2-6" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/config-custom-domains/serverless-custom-domains.html">Configuring custom domains overview</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/create-domain-mapping.html">Custom domain mapping</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/create-domain-mapping-kn.html">Custom domains using the Knative CLI</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/domain-mapping-odc-developer.html">Domain mapping using the Developer perspective</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/domain-mapping-odc-admin.html">Domain mapping using the Administrator perspective</a></li>
+                  <li><a class="" href="../knative-serving/config-custom-domains/domain-mapping-custom-tls-cert.html">Securing a mapped service using a TLS certificate</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-7"><span id="sgSpan-2-7" class="fa fa-caret-right"></span>&nbsp;Configuring high availability for Knative services</a>
+              <ul id="topicSubGroup-2-7" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../knative-serving/config-ha-services/ha-services-overview.html">High availability for Knative services overview</a></li>
+                  <li><a class="" href="../knative-serving/config-ha-services/ha-replicas-serving.html">High availability for Knative services</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup3"><span id="tgSpan3" class="fa fa-angle-right"></span>Eventing</a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../eventing/knative-eventing.html">Knative Eventing</a></li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-1"><span id="sgSpan-3-1" class="fa fa-caret-right"></span>&nbsp;Event sources</a>
+              <ul id="topicSubGroup-3-1" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/event-sources/knative-event-sources.html">Event sources overview</a></li>
+                  <li><a class="" href="../eventing/event-sources/event-source-admin-perspective.html">Event source in the Administrator perspective</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-apiserversource.html">Creating an API server source</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-pingsource.html">Creating a ping source</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-kafka-developer-source.html">Source for Apache Kafka</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-custom-event-sources.html">Custom event sources</a></li>
+                  <li><a class="" href="../eventing/event-sources/serverless-sink-source-odc.html">Connecting an event source to a sink using the Developer perspective</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-2"><span id="sgSpan-3-2" class="fa fa-caret-right"></span>&nbsp;Event sinks</a>
+              <ul id="topicSubGroup-3-2" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/event-sinks/serverless-event-sinks.html">Event sinks overview</a></li>
+                  <li><a class="" href="../eventing/event-sinks/serverless-creating-sinks.html">Creating event sinks</a></li>
+                  <li><a class="" href="../eventing/event-sinks/serverless-kafka-developer-sink.html">Sink for Apache Kafka</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-3"><span id="sgSpan-3-3" class="fa fa-caret-right"></span>&nbsp;Brokers</a>
+              <ul id="topicSubGroup-3-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/brokers/serverless-brokers.html">Brokers overview</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-broker-types.html">Broker types</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-using-brokers.html">Creating brokers</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-broker-backing-channel-default.html">Configuring the default broker backing channel</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-global-config-broker-class-default.html">Configuring the default broker class</a></li>
+                  <li><a class="" href="../eventing/brokers/kafka-broker.html">Knative broker for Apache Kafka</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-using-brokers-managing-brokers.html">Managing brokers</a></li>
+                  <li><a class="" href="../eventing/brokers/serverless-event-delivery.html">Event delivery</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-4"><span id="sgSpan-3-4" class="fa fa-caret-right"></span>&nbsp;Triggers</a>
+              <ul id="topicSubGroup-3-4" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/triggers/serverless-triggers.html">Triggers overview</a></li>
+                  <li><a class="" href="../eventing/triggers/create-triggers.html">Creating triggers</a></li>
+                  <li><a class="" href="../eventing/triggers/list-triggers-cli.html">List triggers from the command line</a></li>
+                  <li><a class="" href="../eventing/triggers/describe-triggers-cli.html">Describe triggers from the command line</a></li>
+                  <li><a class="" href="../eventing/triggers/connect-trigger-sink.html">Connecting a trigger to a sink</a></li>
+                  <li><a class="" href="../eventing/triggers/filter-triggers-cli.html">Filtering triggers from the command line</a></li>
+                  <li><a class="" href="../eventing/triggers/update-triggers-cli.html">Updating triggers from the command line</a></li>
+                  <li><a class="" href="../eventing/triggers/delete-triggers-cli.html">Deleting triggers from the command line</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-5"><span id="sgSpan-3-5" class="fa fa-caret-right"></span>&nbsp;Channels</a>
+              <ul id="topicSubGroup-3-5" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/channels/serverless-channels.html">Channels and subscriptions</a></li>
+                  <li><a class="" href="../eventing/channels/serverless-creating-channels.html">Creating channels</a></li>
+                  <li><a class="" href="../eventing/channels/connecting-channels-sinks.html">Connecting channels to sinks</a></li>
+                  <li><a class="" href="../eventing/channels/serverless-channel-default.html">Default channel implementation</a></li>
+                  <li><a class="" href="../eventing/channels/serverless-kafka-admin-security-channels.html">Security configuration for channels</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-6"><span id="sgSpan-3-6" class="fa fa-caret-right"></span>&nbsp;Subscriptions</a>
+              <ul id="topicSubGroup-3-6" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/subscriptions/serverless-subs.html">Creating subscriptions</a></li>
+                  <li><a class="" href="../eventing/subscriptions/serverless-subs-managing.html">Managing subscriptions</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-7"><span id="sgSpan-3-7" class="fa fa-caret-right"></span>&nbsp;Event discovery</a>
+              <ul id="topicSubGroup-3-7" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/discovery/serverless-listing-event-sources.html">Listing event sources and event source types</a></li>
+                  <li><a class="" href="../eventing/discovery/list-event-source-types-cli.html">Listing event source types from the command line</a></li>
+                  <li><a class="" href="../eventing/discovery/list-event-source-types-odc.html">Listing event source types from the Developer perspective</a></li>
+                  <li><a class="" href="../eventing/discovery/list-event-sources-cli.html">Listing event sources from the command line</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-8"><span id="sgSpan-3-8" class="fa fa-caret-right"></span>&nbsp;Tuning eventing configuration</a>
+              <ul id="topicSubGroup-3-8" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../eventing/tuning/overriding-config-eventing.html">Overriding deployment configurations</a></li>
+                  <li><a class="" href="../eventing/tuning/serverless-ha.html">High availability</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup4"><span id="tgSpan4" class="fa fa-angle-right"></span>Functions</a>
+      <ul id="topicGroup4" class="collapse  list-unstyled">
+            <li><a class="" href="../functions/serverless-functions-setup.html">Setting up OpenShift Serverless Functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-getting-started.html">Getting started with functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-on-cluster-builds.html">On-cluster function building and deploying</a></li>
+            <li><a class="" href="../functions/serverless-developing-quarkus-functions.html">Developing Quarkus functions</a></li>
+            <li><a class="" href="../functions/serverless-developing-nodejs-functions.html">Developing Node.js functions</a></li>
+            <li><a class="" href="../functions/serverless-developing-typescript-functions.html">Developing TypeScript functions</a></li>
+            <li><a class="" href="../functions/serverless-developing-python-functions.html">Developing Python functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-eventing.html">Using functions with Knative Eventing</a></li>
+            <li><a class="" href="../functions/serverless-functions-yaml.html">Function project configuration in func.yaml</a></li>
+            <li><a class="" href="../functions/serverless-functions-accessing-secrets-configmaps.html">Accessing secrets and config maps from functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-annotations.html">Adding annotations to functions</a></li>
+            <li><a class="" href="../functions/serverless-functions-reference-guide.html">Functions development reference guide</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup5"><span id="tgSpan5" class="fa fa-angle-right"></span>Knative CLI</a>
+      <ul id="topicGroup5" class="collapse  list-unstyled">
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-0"><span id="sgSpan-5-0" class="fa fa-caret-right"></span>&nbsp;Knative Serving CLI commands</a>
+              <ul id="topicSubGroup-5-0" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../cli_tools/serving_cli/kn-service.html">kn service commands</a></li>
+                  <li><a class="" href="../cli_tools/serving_cli/kn-service-offline.html">kn service commands in offline mode</a></li>
+                  <li><a class="" href="../cli_tools/serving_cli/kn-container.html">kn container commands</a></li>
+                  <li><a class="" href="../cli_tools/serving_cli/kn-domain.html">kn domain commands</a></li>              </ul>
+            </li>
+            <li><a class="" href="../cli_tools/advanced-kn-config.html">Configuring the Knative CLI</a></li>
+            <li><a class="" href="../cli_tools/kn-plugins.html">Knative CLI plugins</a></li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-3"><span id="sgSpan-5-3" class="fa fa-caret-right"></span>&nbsp;Knative Eventing CLI commands</a>
+              <ul id="topicSubGroup-5-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../cli_tools/eventing_cli/kn-source.html">kn source commands</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-4"><span id="sgSpan-5-4" class="fa fa-caret-right"></span>&nbsp;Knative Functions CLI commands</a>
+              <ul id="topicSubGroup-5-4" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../cli_tools/functions_cli/kn-functions.html">kn functions commands</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup6"><span id="tgSpan6" class="fa fa-angle-right"></span>Observability</a>
+      <ul id="topicGroup6" class="collapse  list-unstyled">
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-0"><span id="sgSpan-6-0" class="fa fa-caret-right"></span>&nbsp;Administrator metrics</a>
+              <ul id="topicSubGroup-6-0" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../observability/admin-metrics/serverless-admin-metrics.html">Administrator metrics overview</a></li>
+                  <li><a class="" href="../observability/admin-metrics/serverless-controller-metrics.html">Controller metrics</a></li>
+                  <li><a class="" href="../observability/admin-metrics/serverless-webhook-metrics.html">Webhook metrics</a></li>
+                  <li><a class="" href="../observability/admin-metrics/serverless-admin-metrics-eventing.html">Knative Eventing metrics</a></li>
+                  <li><a class="" href="../observability/admin-metrics/serverless-admin-metrics-serving.html">Knative Serving metrics</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-1"><span id="sgSpan-6-1" class="fa fa-caret-right"></span>&nbsp;Developer metrics</a>
+              <ul id="topicSubGroup-6-1" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../observability/developer-metrics/serverless-developer-metrics.html">Developer metrics overview</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-monitoring-services-default-metrics.html">Default Knative service metrics</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-monitoring-services-custom-metrics.html">Custom Knative service metrics</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-monitoring-services-configuration-scraping.html">Configuration for scraping custom metrics</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-monitoring-services-examining-metrics.html">Examining metrics of a service</a></li>
+                  <li><a class="" href="../observability/developer-metrics/serverless-developer-metrics-dashboard.html">Dashboard for service metrics</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-2"><span id="sgSpan-6-2" class="fa fa-caret-right"></span>&nbsp;Cluster logging</a>
+              <ul id="topicSubGroup-6-2" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../observability/cluster-logging/cluster-logging-serverless.html">Using OpenShift Logging with Serverless</a></li>
+                  <li><a class="" href="../observability/cluster-logging/finding-serving-logs-components.html">Finding logs for Knative Serving components</a></li>
+                  <li><a class="" href="../observability/cluster-logging/finding-serving-logs-services.html">Finding logs for Knative Serving services</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-3"><span id="sgSpan-6-3" class="fa fa-caret-right"></span>&nbsp;Tracing</a>
+              <ul id="topicSubGroup-6-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../observability/tracing/serverless-tracing.html">Tracing requests</a></li>
+                  <li><a class="" href="../observability/tracing/serverless-tracing-open-telemetry.html">Using Red Hat OpenShift distributed tracing</a></li>
+                  <li><a class="" href="../observability/tracing/serverless-tracing-jaeger.html">Using Jaeger distributed tracing</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup7"><span id="tgSpan7" class="fa fa-angle-right"></span>Integrations</a>
+      <ul id="topicGroup7" class="collapse  list-unstyled">
+            <li><a class="" href="../integrations/serverless-ossm-setup.html">Integrating Service Mesh with OpenShift Serverless</a></li>
+            <li><a class="" href="../integrations/serverless-cost-management-integration.html">Integrating Serverless with the cost management service</a></li>
+            <li><a class="" href="../integrations/gpu-resources.html">Using NVIDIA GPU resources with serverless applications</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup8"><span id="tgSpan8" class="fa fa-angle-right"></span>Removing Serverless</a>
+      <ul id="topicGroup8" class="collapse  list-unstyled">
+            <li><a class="" href="../removing/removing-openshift-serverless.html">Removing Serverless overview</a></li>
+            <li><a class="" href="../removing/uninstalling-knative-eventing.html">Uninstalling Knative Eventing</a></li>
+            <li><a class="" href="../removing/uninstalling-knative-serving.html">Uninstalling Knative Serving</a></li>
+            <li><a class="" href="../removing/removing-serverless-operator.html">Removing Serverless Operator</a></li>
+            <li><a class="" href="../removing/deleting-serverless-crds.html">Deleting Serverless CRDs</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div id="hc-search-modal">
+        <div id="hc-modal-content">
+          <span id="hc-modal-close">&times;</span>
+          <div id="hc-search-results-wrapper">
+            <div id="hc-search-results"></div>
+            <div id="hc-search-progress-indicator" class="text-center search-progress-indicator"><i class="fa fa-circle-o-notch fa-spin" style="font-size:42px"></i></div>
+            <div class="text-center">
+              <button id="hc-search-more-btn">Show more results</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="print-logo" style="display:none;">
+        <img src="https://www.redhat.com/cms/managed-files/Logo-Red_Hat-OpenShift-A-Standard-RGB_0_0.svg" alt="print logo"/>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h1>
+            Release notes
+          </h1>
+        </div>
+        
+        
+        <div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title"></div>
+<ul class="sectlevel1">
+<li><a href="#serverless-api-versions_serverless-release-notes">About API versions</a></li>
+<li><a href="#serverless-tech-preview-features_serverless-release-notes">Generally Available and Technology Preview features</a></li>
+<li><a href="#serverless-deprecated-removed-features_serverless-release-notes">Deprecated and removed features</a></li>
+<li><a href="#serverless-rn-1-28-0_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.28</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1-28-0_serverless-release-notes">New features</a></li>
+<li><a href="#known-issues-1-28-0_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-27_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.27</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1-27_serverless-release-notes">New features</a></li>
+<li><a href="#fixed-issues-1-27_serverless-release-notes">Fixed issues</a></li>
+<li><a href="#known-issues-1-27_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-26_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.26</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1.26_serverless-release-notes">New features</a></li>
+<li><a href="#fixed-issues-1.26_serverless-release-notes">Fixed issues</a></li>
+<li><a href="#known-issues-1.26_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-25-0_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.25.0</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1.25.0_serverless-release-notes">New features</a></li>
+<li><a href="#fixed-issues-1.25.0_serverless-release-notes">Fixed issues</a></li>
+<li><a href="#known-issues-1.25.0_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-24-0_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.24.0</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1.24.0_serverless-release-notes">New features</a></li>
+<li><a href="#fixed-issues-1.24.0_serverless-release-notes">Fixed issues</a></li>
+<li><a href="#known-issues-1-24-0_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-23-0_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.23.0</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1-23-0_serverless-release-notes">New features</a></li>
+<li><a href="#known-issues-1-23-0_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-22-0_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.22.0</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1-22-0_serverless-release-notes">New features</a></li>
+<li><a href="#known-issues-1-22-0_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-21-0_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.21.0</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1-21-0_serverless-release-notes">New features</a></li>
+<li><a href="#fixed-issues-1-21-0_serverless-release-notes">Fixed issues</a></li>
+<li><a href="#known-issues-1-21-0_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-20-0_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.20.0</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1-20-0_serverless-release-notes">New features</a></li>
+<li><a href="#known-issues-1-20-0_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-19-0_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.19.0</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1-19-0_serverless-release-notes">New features</a></li>
+<li><a href="#fixed-issues-1-19-0_serverless-release-notes">Fixed issues</a></li>
+<li><a href="#known-issues-1-19-0_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+<li><a href="#serverless-rn-1-18-0_serverless-release-notes">Release notes for Red Hat OpenShift Serverless 1.18.0</a>
+<ul class="sectlevel2">
+<li><a href="#new-features-1-18-0_serverless-release-notes">New features</a></li>
+<li><a href="#fixed-issues-1-18-0_serverless-release-notes">Fixed issues</a></li>
+<li><a href="#known-issues-1-18-0_serverless-release-notes">Known issues</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For additional information about the OpenShift Serverless life cycle and supported platforms, refer to the <a href="https://access.redhat.com/support/policy/updates/openshift#ossrvless">Platform Life Cycle Policy</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Release notes contain information about new and deprecated features, breaking changes, and known issues. The following release notes apply for the most recent OpenShift Serverless releases on OpenShift Container Platform.</p>
+</div>
+<div class="paragraph">
+<p>For an overview of OpenShift Serverless functionality, see <a href="../about/about-serverless.html#about-serverless">About OpenShift Serverless</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenShift Serverless is based on the open source Knative project.</p>
+</div>
+<div class="paragraph">
+<p>For details about the latest Knative component releases, see the <a href="https://knative.dev/blog/">Knative blog</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-api-versions_serverless-release-notes"><a class="anchor" href="#serverless-api-versions_serverless-release-notes"></a>About API versions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>API versions are an important measure of the development status of certain features and custom resources in OpenShift Serverless. Creating resources on your cluster that do not use the correct API version can cause issues in your deployment.</p>
+</div>
+<div class="paragraph">
+<p>The OpenShift Serverless Operator automatically upgrades older resources that use deprecated versions of APIs to use the latest version. For example, if you have created resources on your cluster that use older versions of the <code>ApiServerSource</code> API, such as <code>v1beta1</code>, the OpenShift Serverless Operator automatically updates these resources to use the <code>v1</code> version of the API when this is available and the <code>v1beta1</code> version is deprecated.</p>
+</div>
+<div class="paragraph">
+<p>After they have been deprecated, older versions of APIs might be removed in any upcoming release. Using deprecated versions of APIs does not cause resources to fail. However, if you try to use a version of an API that has been removed, it will cause resources to fail. Ensure that your manifests are updated to use the latest version to avoid issues.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-tech-preview-features_serverless-release-notes"><a class="anchor" href="#serverless-tech-preview-features_serverless-release-notes"></a>Generally Available and Technology Preview features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Features which are Generally Available (GA) are fully supported and are suitable for production use. Technology Preview (TP) features are experimental features and are not intended for production use. See the <a href="https://access.redhat.com/support/offerings/techpreview">Technology Preview scope of support on the Red Hat Customer Portal</a> for more information about TP features.</p>
+</div>
+<div class="paragraph">
+<p>The following table provides information about which OpenShift Serverless features are GA and which are TP:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Generally Available and Technology Preview features tracker for OpenShift Container Platform and OpenShift Dedicated</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">1.26</th>
+<th class="tableblock halign-left valign-top">1.27</th>
+<th class="tableblock halign-left valign-top">1.28</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kn func</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quarkus functions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node.js functions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TypeScript functions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Python functions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Mesh mTLS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>emptyDir</code> volumes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS redirection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kafka broker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kafka sink</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Init containers support for Knative services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PVC support for Knative services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TLS for internal traffic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namespace-scoped brokers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>multi-container support</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Generally Available and Technology Preview features tracker for Red Hat OpenShift Service on AWS</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">1.26</th>
+<th class="tableblock halign-left valign-top">1.27</th>
+<th class="tableblock halign-left valign-top">1.28</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kn func</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service Mesh mTLS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>emptyDir</code> volumes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS redirection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kafka broker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kafka sink</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Init containers support for Knative services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PVC support for Knative services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TLS for internal traffic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namespace-scoped brokers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>multi-container support</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TP</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-deprecated-removed-features_serverless-release-notes"><a class="anchor" href="#serverless-deprecated-removed-features_serverless-release-notes"></a>Deprecated and removed features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some features that were Generally Available (GA) or a Technology Preview (TP) in previous releases have been deprecated or removed. Deprecated functionality is still included in OpenShift Serverless and continues to be supported; however, it will be removed in a future release of this product and is not recommended for new deployments.</p>
+</div>
+<div class="paragraph">
+<p>For the most recent list of major functionality deprecated and removed within OpenShift Serverless, refer to the following table:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Deprecated and removed features tracker for OpenShift Container Platform and OpenShift Dedicated</caption>
+<colgroup>
+<col style="width: 37.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">1.20</th>
+<th class="tableblock halign-left valign-top">1.21</th>
+<th class="tableblock halign-left valign-top">1.22 to 1.26</th>
+<th class="tableblock halign-left valign-top">1.27</th>
+<th class="tableblock halign-left valign-top">1.28</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>KafkaBinding</code> API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kn func emit</code> (<code>kn func invoke</code> in 1.21+)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serving and Eventing <code>v1alpha1</code> API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>enable-secret-informer-filtering</code> annotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Deprecated and removed features tracker for Red Hat OpenShift Service on AWS</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-left valign-top">1.23 to 1.26</th>
+<th class="tableblock halign-left valign-top">1.27</th>
+<th class="tableblock halign-left valign-top">1.28</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>KafkaBinding</code> API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kn func emit</code> (<code>kn func invoke</code> in 1.21+)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serving and Eventing <code>v1alpha1</code> API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-28-0_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-28-0_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.28</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.28 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1-28-0_serverless-release-notes"><a class="anchor" href="#new-features-1-28-0_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 1.7.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 1.7.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 1.7.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 1.7.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative broker implementation for Apache Kafka 1.7.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plug-in now uses <code>func</code> 1.9.1 version.</p>
+</li>
+<li>
+<p>Node.js and TypeScript runtimes for OpenShift Serverless Functions are now Generally Available (GA).</p>
+</li>
+<li>
+<p>Python runtime for OpenShift Serverless Functions is now available as a Technology Preview.</p>
+</li>
+<li>
+<p>Multi-container support for Knative Serving is now available as a Technology Preview. This feature allows you to use a single Knative service to deploy a multi-container pod.</p>
+</li>
+<li>
+<p>In OpenShift Serverless 1.29 or later, the following components of Knative Eventing will be scaled down from two pods to one:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>imc-controller</code></p>
+</li>
+<li>
+<p><code>imc-dispatcher</code></p>
+</li>
+<li>
+<p><code>mt-broker-controller</code></p>
+</li>
+<li>
+<p><code>mt-broker-filter</code></p>
+</li>
+<li>
+<p><code>mt-broker-ingress</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>The <code>serverless.openshift.io/enable-secret-informer-filtering</code> annotation for the Serving CR is now deprecated. The annotation is valid only for Istio, and not for Kourier.</p>
+<div class="paragraph">
+<p>With OpenShift Serverless 1.28, the OpenShift Serverless Operator allows injecting the environment variable <code>ENABLE_SECRET_INFORMER_FILTERING_BY_CERT_UID</code> for both <code>net-istio</code> and <code>net-kourier</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you enable secret filtering, all of your secrets need to be labeled with  <code>networking.internal.knative.dev/certificate-uid: "&lt;id&gt;"</code>. Otherwise, Knative Serving does not detect them, which leads to failures. You must label both new and existing secrets.</p>
+</div>
+<div class="paragraph">
+<p>In one of the following OpenShift Serverless releases, secret filtering will become enabled by default. To prevent failures, label your secrets in advance.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1-28-0_serverless-release-notes"><a class="anchor" href="#known-issues-1-28-0_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Currently, runtimes for Python are not supported for OpenShift Serverless Functions on IBM Power, IBM zSystems, and IBM&#174; LinuxONE.</p>
+<div class="paragraph">
+<p>Node.js, TypeScript, and Quarkus functions are supported on these architectures.</p>
+</div>
+</li>
+<li>
+<p>On the Windows platform, Python functions cannot be locally built, run, or deployed using the Source-to-Image builder due to the <code>app.sh</code> file permissions.</p>
+<div class="paragraph">
+<p>To work around this problem, use the Windows Subsystem for Linux.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-27_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-27_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.27</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.27 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenShift Serverless 1.26 is the earliest release that is fully supported on OpenShift Container Platform 4.12. OpenShift Serverless 1.25 and older does not deploy on OpenShift Container Platform 4.12.</p>
+</div>
+<div class="paragraph">
+<p>For this reason, before upgrading OpenShift Container Platform to version 4.12, first upgrade OpenShift Serverless to version 1.26 or 1.27.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="new-features-1-27_serverless-release-notes"><a class="anchor" href="#new-features-1-27_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 1.6.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 1.6.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 1.6.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 1.6.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 1.6.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plug-in now uses <code>func</code> 1.8.1.</p>
+</li>
+<li>
+<p>Namespace-scoped brokers are now available as a Technology Preview. Such brokers can be used, for instance, to implement role-based access control (RBAC) policies.</p>
+</li>
+<li>
+<p><code>KafkaSink</code> now uses the <code>CloudEvent</code> binary content mode by default. The binary content mode is more efficient than the structured mode because it uses headers in its body instead of a <code>CloudEvent</code>. For example, for the HTTP protocol, it uses HTTP headers.</p>
+</li>
+<li>
+<p>You can now use the gRPC framework over the HTTP/2 protocol for external traffic using the OpenShift Route on OpenShift Container Platform 4.10 and later. This improves efficiency and speed of the communications between the client and server.</p>
+</li>
+<li>
+<p>API version <code>v1alpha1</code> of the Knative Operator Serving and Eventings CRDs is deprecated in 1.27. It will be removed in future versions. Red Hat strongly recommends to use the <code>v1beta1</code> version instead. This does not affect the existing installations, because CRDs are updated automatically when upgrading the Serverless Operator.</p>
+</li>
+<li>
+<p>The delivery timeout feature is now enabled by default. It allows you to specify the timeout for each sent HTTP request. The feature remains a Technology Preview.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed-issues-1-27_serverless-release-notes"><a class="anchor" href="#fixed-issues-1-27_serverless-release-notes"></a>Fixed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Previously, Knative services sometimes did not get into the <code>Ready</code> state, reporting waiting for the load balancer to be ready. This issue has been fixed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1-27_serverless-release-notes"><a class="anchor" href="#known-issues-1-27_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrating OpenShift Serverless with Red Hat OpenShift Service Mesh causes the <code>net-kourier</code> pod to run out of memory on startup when too many secrets are present on the cluster.</p>
+</li>
+<li>
+<p>Namespace-scoped brokers might leave <code>ClusterRoleBindings</code> in the user namespace even after deletion of namespace-scoped brokers.</p>
+<div class="paragraph">
+<p>If this happens, delete the <code>ClusterRoleBinding</code> named <code>rbac-proxy-reviews-prom-rb-knative-kafka-broker-data-plane-{{.Namespace}}</code> in the user namespace.</p>
+</div>
+</li>
+<li>
+<p>If you use <code>net-istio</code> for Ingress and enable mTLS via SMCP using <code>security.dataPlane.mtls: true</code>, Service Mesh deploys <code>DestinationRules</code> for the <code>*.local</code> host, which does not allow <code>DomainMapping</code> for OpenShift Serverless.</p>
+<div class="paragraph">
+<p>To work around this issue, enable mTLS by deploying <code>PeerAuthentication</code> instead of using <code>security.dataPlane.mtls: true</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-26_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-26_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.26</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.26 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1.26_serverless-release-notes"><a class="anchor" href="#new-features-1.26_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless Functions with Quarkus is now GA.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 1.5.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 1.5.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 1.5.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 1.5.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 1.5.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Operator 1.3.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plugin now uses <code>func</code> 1.8.1.</p>
+</li>
+<li>
+<p>Persistent volume claims (PVCs) are now GA. PVCs provide permanent data storage for your Knative services.</p>
+</li>
+<li>
+<p>The new trigger filters feature is now available as a Developer Preview. It allows users to specify a set of filter expressions, where each expression evaluates to either true or false for each event.</p>
+<div class="paragraph">
+<p>To enable new trigger filters, add the <code>new-trigger-filters: enabled</code> entry in the section of the <code>KnativeEventing</code> type in the operator config map:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">operator.knative.dev/v1beta1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KnativeEventing</span>
+<span class="nn">...</span>
+<span class="nn">...</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">config</span><span class="pi">:</span>
+    <span class="na">features</span><span class="pi">:</span>
+      <span class="na">new-trigger-filters</span><span class="pi">:</span> <span class="s">enabled</span>
+<span class="nn">...</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Knative Operator 1.3 adds the updated <code>v1beta1</code> version of the API for <code>operator.knative.dev</code>.</p>
+<div class="paragraph">
+<p>To update from <code>v1alpha1</code> to <code>v1beta1</code> in your <code>KnativeServing</code> and <code>KnativeEventing</code> custom resource config maps, edit the <code>apiVersion</code> key:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example <code>KnativeServing</code> custom resource config map</div>
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">operator.knative.dev/v1beta1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KnativeServing</span>
+<span class="nn">...</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example <code>KnativeEventing</code> custom resource config map</div>
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">operator.knative.dev/v1beta1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KnativeEventing</span>
+<span class="nn">...</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed-issues-1.26_serverless-release-notes"><a class="anchor" href="#fixed-issues-1.26_serverless-release-notes"></a>Fixed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Previously, Federal Information Processing Standards (FIPS) mode was disabled for Kafka broker, Kafka source, and Kafka sink. This has been fixed, and FIPS mode is now available.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1.26_serverless-release-notes"><a class="anchor" href="#known-issues-1.26_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>If you use <code>net-istio</code> for Ingress and enable mTLS via SMCP using <code>security.dataPlane.mtls: true</code>, Service Mesh deploys <code>DestinationRules</code> for the <code>*.local</code> host, which does not allow <code>DomainMapping</code> for OpenShift Serverless.</p>
+<div class="paragraph">
+<p>To work around this issue, enable mTLS by deploying <code>PeerAuthentication</code> instead of using <code>security.dataPlane.mtls: true</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://knative.dev/docs/eventing/experimental-features/new-trigger-filters/">Knative documentation on new trigger filters</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-25-0_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-25-0_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.25.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.25.0 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1.25.0_serverless-release-notes"><a class="anchor" href="#new-features-1.25.0_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 1.4.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 1.4.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 1.4.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 1.4.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 1.4.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plugin now uses <code>func</code> 1.7.0.</p>
+</li>
+<li>
+<p>Integrated development environment (IDE) plugins for creating and deploying functions are now available for <a href="https://github.com/redhat-developer/vscode-knative">Visual Studio Code</a> and <a href="https://github.com/redhat-developer/intellij-knative">IntelliJ</a>.</p>
+</li>
+<li>
+<p>Knative Kafka broker is now GA. Knative Kafka broker is a highly performant implementation of the Knative broker API, directly targeting Apache Kafka.</p>
+<div class="paragraph">
+<p>It is recommended to not use the MT-Channel-Broker, but the Knative Kafka broker instead.</p>
+</div>
+</li>
+<li>
+<p>Knative Kafka sink is now GA. A <code>KafkaSink</code> takes a <code>CloudEvent</code> and sends it to an Apache Kafka topic. Events can be specified in either structured or binary content modes.</p>
+</li>
+<li>
+<p>Enabling TLS for internal traffic is now available as a Technology Preview.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed-issues-1.25.0_serverless-release-notes"><a class="anchor" href="#fixed-issues-1.25.0_serverless-release-notes"></a>Fixed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Previously, Knative Serving had an issue where the readiness probe failed if the container was restarted after a liveness probe fail. This issue has been fixed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1.25.0_serverless-release-notes"><a class="anchor" href="#known-issues-1.25.0_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Federal Information Processing Standards (FIPS) mode is disabled for Kafka broker, Kafka source, and Kafka sink.</p>
+</li>
+<li>
+<p>The <code>SinkBinding</code> object does not support custom revision names for services.</p>
+</li>
+<li>
+<p>The Knative Serving Controller pod adds a new informer to watch secrets in the cluster. The informer includes the secrets in the cache, which increases memory consumption of the controller pod.</p>
+<div class="paragraph">
+<p>If the pod runs out of memory, you can work around the issue by increasing the memory limit for the deployment.</p>
+</div>
+</li>
+<li>
+<p>If you use <code>net-istio</code> for Ingress and enable mTLS via SMCP using <code>security.dataPlane.mtls: true</code>, Service Mesh deploys <code>DestinationRules</code> for the <code>*.local</code> host, which does not allow <code>DomainMapping</code> for OpenShift Serverless.</p>
+<div class="paragraph">
+<p>To work around this issue, enable mTLS by deploying <code>PeerAuthentication</code> instead of using <code>security.dataPlane.mtls: true</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources for OpenShift Container Platform</div>
+<ul>
+<li>
+<p><a href="../knative-serving/config-applications/serverless-config-tls.html#serverless-config-tls">Configuring TLS authentication</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-24-0_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-24-0_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.24.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.24.0 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1.24.0_serverless-release-notes"><a class="anchor" href="#new-features-1.24.0_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 1.3.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 1.3.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 1.3.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative <code>kn</code> CLI 1.3.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 1.3.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plugin now uses <code>func</code> 0.24.</p>
+</li>
+<li>
+<p>Init containers support for Knative services is now generally available (GA).</p>
+</li>
+<li>
+<p>OpenShift Serverless logic is now available as a Developer Preview. It enables defining declarative workflow models for managing serverless applications.</p>
+</li>
+<li>
+<p>For OpenShift Container Platform, you can now use the cost management service with OpenShift Serverless.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed-issues-1.24.0_serverless-release-notes"><a class="anchor" href="#fixed-issues-1.24.0_serverless-release-notes"></a>Fixed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrating OpenShift Serverless with Red Hat OpenShift Service Mesh causes the <code>net-istio-controller</code> pod to run out of memory on startup when too many secrets are present on the cluster.</p>
+<div class="paragraph">
+<p>It is now possible to enable secret filtering, which causes <code>net-istio-controller</code> to consider only secrets with a <code>networking.internal.knative.dev/certificate-uid</code> label, thus reducing the amount of memory needed.</p>
+</div>
+</li>
+<li>
+<p>The OpenShift Serverless Functions Technology Preview now uses <a href="https://buildpacks.io/">Cloud Native Buildpacks</a> by default to build container images.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1-24-0_serverless-release-notes"><a class="anchor" href="#known-issues-1-24-0_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Federal Information Processing Standards (FIPS) mode is disabled for Kafka broker, Kafka source, and Kafka sink.</p>
+</li>
+<li>
+<p>In OpenShift Serverless 1.23, support for KafkaBindings and the <code>kafka-binding</code> webhook were removed. However, an existing <code>kafkabindings.webhook.kafka.sources.knative.dev MutatingWebhookConfiguration</code> might remain, pointing to the <code>kafka-source-webhook</code> service, which no longer exists.</p>
+<div class="paragraph">
+<p>For certain specifications of KafkaBindings on the cluster, <code>kafkabindings.webhook.kafka.sources.knative.dev MutatingWebhookConfiguration</code> might be configured to pass any create and update events to various resources, such as Deployments, Knative Services, or Jobs, through the webhook, which would then fail.</p>
+</div>
+<div class="paragraph">
+<p>To work around this issue, manually delete <code>kafkabindings.webhook.kafka.sources.knative.dev MutatingWebhookConfiguration</code> from the cluster after upgrading to OpenShift Serverless 1.23:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc delete mutatingwebhookconfiguration kafkabindings.webhook.kafka.sources.knative.dev</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>If you use <code>net-istio</code> for Ingress and enable mTLS via SMCP using <code>security.dataPlane.mtls: true</code>, Service Mesh deploys <code>DestinationRules</code> for the <code>*.local</code> host, which does not allow <code>DomainMapping</code> for OpenShift Serverless.</p>
+<div class="paragraph">
+<p>To work around this issue, enable mTLS by deploying <code>PeerAuthentication</code> instead of using <code>security.dataPlane.mtls: true</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-23-0_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-23-0_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.23.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.23.0 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1-23-0_serverless-release-notes"><a class="anchor" href="#new-features-1-23-0_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 1.2.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 1.2.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 1.2.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 1.2.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 1.2.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plugin now uses <code>func</code> 0.24.</p>
+</li>
+<li>
+<p>It is now possible to use the <code>kafka.eventing.knative.dev/external.topic</code> annotation with the Kafka broker. This annotation makes it possible to use an existing externally managed topic instead of the broker creating its own internal topic.</p>
+</li>
+<li>
+<p>The <code>kafka-ch-controller</code> and <code>kafka-webhook</code> Kafka components no longer exist. These components have been replaced by the <code>kafka-webhook-eventing</code> component.</p>
+</li>
+<li>
+<p>The OpenShift Serverless Functions Technology Preview now uses Source-to-Image (S2I) by default to build container images.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1-23-0_serverless-release-notes"><a class="anchor" href="#known-issues-1-23-0_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Federal Information Processing Standards (FIPS) mode is disabled for Kafka broker, Kafka source, and Kafka sink.</p>
+</li>
+<li>
+<p>If you delete a namespace that includes a Kafka broker, the namespace finalizer may fail to be removed if the broker&#8217;s <code>auth.secret.ref.name</code> secret is deleted before the broker.</p>
+</li>
+<li>
+<p>Running OpenShift Serverless with a large number of Knative services can cause Knative activator pods to run close to their default memory limits of 600MB. These pods might be restarted if memory consumption reaches this limit. Requests and limits for the activator deployment can be configured by modifying the <code>KnativeServing</code> custom resource:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">operator.knative.dev/v1beta1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KnativeServing</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">knative-serving</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">knative-serving</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">deployments</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">activator</span>
+    <span class="na">resources</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">container</span><span class="pi">:</span> <span class="s">activator</span>
+      <span class="na">requests</span><span class="pi">:</span>
+        <span class="na">cpu</span><span class="pi">:</span> <span class="s">300m</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s">60Mi</span>
+      <span class="na">limits</span><span class="pi">:</span>
+        <span class="na">cpu</span><span class="pi">:</span> <span class="s">1000m</span>
+        <span class="na">memory</span><span class="pi">:</span> <span class="s">1000Mi</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>If you are using <a href="https://buildpacks.io/">Cloud Native Buildpacks</a> as the local build strategy for a function, <code>kn func</code> is unable to automatically start podman or use an SSH tunnel to a remote daemon. The workaround for these issues is to have a Docker or podman daemon already running on the local development computer before deploying a function.</p>
+</li>
+<li>
+<p>On-cluster function builds currently fail for Quarkus and Golang runtimes. They work correctly for Node, Typescript, Python, and Springboot runtimes.</p>
+</li>
+<li>
+<p>If you use <code>net-istio</code> for Ingress and enable mTLS via SMCP using <code>security.dataPlane.mtls: true</code>, Service Mesh deploys <code>DestinationRules</code> for the <code>*.local</code> host, which does not allow <code>DomainMapping</code> for OpenShift Serverless.</p>
+<div class="paragraph">
+<p>To work around this issue, enable mTLS by deploying <code>PeerAuthentication</code> instead of using <code>security.dataPlane.mtls: true</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources for OpenShift Container Platform</div>
+<ul>
+<li>
+<p><a href="https://docs.openshift.com/container-platform/latest/openshift_images/using_images/using-s21-images.html#using-s21-images">Source-to-Image</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-22-0_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-22-0_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.22.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.22.0 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1-22-0_serverless-release-notes"><a class="anchor" href="#new-features-1-22-0_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 1.1.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 1.1.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 1.1.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 1.1.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 1.1.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plugin now uses <code>func</code> 0.23.</p>
+</li>
+<li>
+<p>Init containers support for Knative services is now available as a Technology Preview.</p>
+</li>
+<li>
+<p>Persistent volume claim (PVC) support for Knative services is now available as a Technology Preview.</p>
+</li>
+<li>
+<p>The <code>knative-serving</code>, <code>knative-serving-ingress</code>, <code>knative-eventing</code> and <code>knative-kafka</code> system namespaces now have the <code>knative.openshift.io/part-of: "openshift-serverless"</code> label by default.</p>
+</li>
+<li>
+<p>The <strong>Knative Eventing - Kafka Broker/Trigger</strong> dashboard has been added, which allows visualizing Kafka broker and trigger metrics in the web console.</p>
+</li>
+<li>
+<p>The <strong>Knative Eventing - KafkaSink</strong> dashboard has been added, which allows visualizing KafkaSink metrics in the web console.</p>
+</li>
+<li>
+<p>The <strong>Knative Eventing - Broker/Trigger</strong> dashboard is now called <strong>Knative Eventing - Channel-based Broker/Trigger</strong>.</p>
+</li>
+<li>
+<p>The <code>knative.openshift.io/part-of: "openshift-serverless"</code> label has substituted the <code>knative.openshift.io/system-namespace</code> label.</p>
+</li>
+<li>
+<p>Naming style in Knative Serving YAML configuration files changed from camel case (<code>ExampleName</code>) to hyphen style (<code>example-name</code>). Beginning with this release, use the hyphen style notation when creating or editing Knative Serving YAML configuration files.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1-22-0_serverless-release-notes"><a class="anchor" href="#known-issues-1-22-0_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Federal Information Processing Standards (FIPS) mode is disabled for Kafka broker, Kafka source, and Kafka sink.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-21-0_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-21-0_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.21.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.21.0 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1-21-0_serverless-release-notes"><a class="anchor" href="#new-features-1-21-0_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 1.0</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 1.0.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 1.0.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 1.0.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 1.0.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plugin now uses <code>func</code> 0.21.</p>
+</li>
+<li>
+<p>The Kafka sink is now available as a Technology Preview.</p>
+</li>
+<li>
+<p>The Knative open source project has begun to deprecate camel-cased configuration keys in favor of using kebab-cased keys consistently. As a result, the <code>defaultExternalScheme</code> key, previously mentioned in the OpenShift Serverless 1.18.0 release notes, is now deprecated and replaced by the <code>default-external-scheme</code> key. Usage instructions for the key remain the same.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed-issues-1-21-0_serverless-release-notes"><a class="anchor" href="#fixed-issues-1-21-0_serverless-release-notes"></a>Fixed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In OpenShift Serverless 1.20.0, there was an event delivery issue affecting the use of <code>kn event send</code> to send events to a service. This issue is now fixed.</p>
+</li>
+<li>
+<p>In OpenShift Serverless 1.20.0 (<code>func</code> 0.20), TypeScript functions created with the <code>http</code> template failed to deploy on the cluster. This issue is now fixed.</p>
+</li>
+<li>
+<p>In OpenShift Serverless 1.20.0 (<code>func</code> 0.20), deploying a function using the <code>gcr.io</code> registry failed with an error. This issue is now fixed.</p>
+</li>
+<li>
+<p>In OpenShift Serverless 1.20.0 (<code>func</code> 0.20), creating a Springboot function project directory with the <code>kn func create</code> command and then running the <code>kn func build</code> command failed with an error message. This issue is now fixed.</p>
+</li>
+<li>
+<p>In OpenShift Serverless 1.19.0 (<code>func</code> 0.19), some runtimes were unable to build a function by using podman. This issue is now fixed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1-21-0_serverless-release-notes"><a class="anchor" href="#known-issues-1-21-0_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Currently, the domain mapping controller cannot process the URI of a broker, which contains a path that is currently not supported.</p>
+<div class="paragraph">
+<p>This means that, if you want to use a <code>DomainMapping</code> custom resource (CR) to map a custom domain to a broker, you must configure the <code>DomainMapping</code> CR with the broker&#8217;s ingress service, and append the exact path of the broker to the custom domain:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example <code>DomainMapping</code> CR</div>
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">serving.knative.dev/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">DomainMapping</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;domain-name&gt;</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">knative-eventing</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">ref</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">broker-ingress</span>
+    <span class="na">kind</span><span class="pi">:</span> <span class="s">Service</span>
+    <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The URI for the broker is then <code>&lt;domain-name&gt;/&lt;broker-namespace&gt;/&lt;broker-name&gt;</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-20-0_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-20-0_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.20.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.20.0 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1-20-0_serverless-release-notes"><a class="anchor" href="#new-features-1-20-0_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 0.26.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 0.26.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 0.26.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 0.26.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 0.26.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plugin now uses <code>func</code> 0.20.</p>
+</li>
+<li>
+<p>The Kafka broker is now available as a Technology Preview.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The Kafka broker, which is currently in Technology Preview, is not supported on FIPS.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The <code>kn event</code> plugin is now available as a Technology Preview.</p>
+</li>
+<li>
+<p>The <code>--min-scale</code> and <code>--max-scale</code> flags for the <code>kn service create</code> command have been deprecated. Use the <code>--scale-min</code> and <code>--scale-max</code> flags instead.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1-20-0_serverless-release-notes"><a class="anchor" href="#known-issues-1-20-0_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless deploys Knative services with a default address that uses HTTPS. When sending an event to a resource inside the cluster, the sender does not have the cluster certificate authority (CA) configured. This causes event delivery to fail, unless the cluster uses globally accepted certificates.</p>
+<div class="paragraph">
+<p>For example, an event delivery to a publicly accessible address works:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>kn event send <span class="nt">--to-url</span> https://ce-api.foo.example.com/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On the other hand, this delivery fails if the service uses a public address with an HTTPS certificate issued by a custom CA:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>kn event send <span class="nt">--to</span> Service:serving.knative.dev/v1:event-display</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sending an event to other addressable objects, such as brokers or channels, is not affected by this issue and works as expected.</p>
+</div>
+</li>
+<li>
+<p>The Kafka broker currently does not work on a cluster with Federal Information Processing Standards (FIPS) mode enabled.</p>
+</li>
+<li>
+<p>If you create a Springboot function project directory with the <code>kn func create</code> command, subsequent running of the <code>kn func build</code> command fails with this error message:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">[analyzer] no stack metadata found at path ''
+[analyzer] ERROR: failed to : set API for buildpack 'paketo-buildpacks/ca-certificates@3.0.2': buildpack API version '0.7' is incompatible with the lifecycle</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As a workaround, you can change the <code>builder</code> property to <code>gcr.io/paketo-buildpacks/builder:base</code> in the function configuration file <code>func.yaml</code>.</p>
+</div>
+</li>
+<li>
+<p>Deploying a function using the <code>gcr.io</code> registry fails with this error message:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">Error: failed to get credentials: failed to verify credentials: status code: 404</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As a workaround, use a different registry than <code>gcr.io</code>, such as <code>quay.io</code> or <code>docker.io</code>.</p>
+</div>
+</li>
+<li>
+<p>TypeScript functions created with the <code>http</code> template fail to deploy on the cluster.</p>
+<div class="paragraph">
+<p>As a workaround, in the <code>func.yaml</code> file, replace the following section:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">buildEnvs: []</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>with this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">buildEnvs:
+- name: BP_NODE_RUN_SCRIPTS
+  value: build</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>In <code>func</code> version 0.20, some runtimes might be unable to build a function by using podman. You might see an error message similar to the following:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">ERROR: failed to image: error during connect: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.40/info": EOF</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The following workaround exists for this issue:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Update the podman service by adding <code>--time=0</code> to the service <code>ExecStart</code> definition:</p>
+<div class="listingblock">
+<div class="title">Example service configuration</div>
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">ExecStart=/usr/bin/podman $</span>LOGGING system service <span class="nt">--time</span><span class="o">=</span>0</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the podman service by running the following commands:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>systemctl <span class="nt">--user</span> daemon-reload</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>systemctl restart <span class="nt">--user</span> podman.socket</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Alternatively, you can expose the podman API by using TCP:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>podman system service <span class="nt">--time</span><span class="o">=</span>0 tcp:127.0.0.1:5534 &amp;
+<span class="go">export DOCKER_HOST=tcp://127.0.0.1:5534</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-19-0_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-19-0_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.19.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.19.0 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1-19-0_serverless-release-notes"><a class="anchor" href="#new-features-1-19-0_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 0.25.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 0.25.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 0.25.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 0.25.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 0.25.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plugin now uses <code>func</code> 0.19.</p>
+</li>
+<li>
+<p>The <code>KafkaBinding</code> API is deprecated in OpenShift Serverless 1.19.0 and will be removed in a future release.</p>
+</li>
+<li>
+<p>HTTPS redirection is now supported and can be configured either globally for a cluster or per each Knative service.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed-issues-1-19-0_serverless-release-notes"><a class="anchor" href="#fixed-issues-1-19-0_serverless-release-notes"></a>Fixed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In previous releases, the Kafka channel dispatcher waited only for the local commit to succeed before responding, which might have caused lost events in the case of an Apache Kafka node failure. The Kafka channel dispatcher now waits for all in-sync replicas to commit before responding.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1-19-0_serverless-release-notes"><a class="anchor" href="#known-issues-1-19-0_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In <code>func</code> version 0.19, some runtimes might be unable to build a function by using podman. You might see an error message similar to the following:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="go">ERROR: failed to image: error during connect: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.40/info": EOF</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The following workaround exists for this issue:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Update the podman service by adding <code>--time=0</code> to the service <code>ExecStart</code> definition:</p>
+<div class="listingblock">
+<div class="title">Example service configuration</div>
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">ExecStart=/usr/bin/podman $</span>LOGGING system service <span class="nt">--time</span><span class="o">=</span>0</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart the podman service by running the following commands:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>systemctl <span class="nt">--user</span> daemon-reload</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>systemctl restart <span class="nt">--user</span> podman.socket</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Alternatively, you can expose the podman API by using TCP:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>podman system service <span class="nt">--time</span><span class="o">=</span>0 tcp:127.0.0.1:5534 &amp;
+<span class="go">export DOCKER_HOST=tcp://127.0.0.1:5534</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="serverless-rn-1-18-0_serverless-release-notes"><a class="anchor" href="#serverless-rn-1-18-0_serverless-release-notes"></a>Release notes for Red Hat OpenShift Serverless 1.18.0</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenShift Serverless 1.18.0 is now available. New features, changes, and known issues that pertain to OpenShift Serverless on OpenShift Container Platform are included in this topic.</p>
+</div>
+<div class="sect2">
+<h3 id="new-features-1-18-0_serverless-release-notes"><a class="anchor" href="#new-features-1-18-0_serverless-release-notes"></a>New features</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift Serverless now uses Knative Serving 0.24.0.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Eventing 0.24.0.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Kourier 0.24.0.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative (<code>kn</code>) CLI 0.24.0.</p>
+</li>
+<li>
+<p>OpenShift Serverless now uses Knative Kafka 0.24.7.</p>
+</li>
+<li>
+<p>The <code>kn func</code> CLI plugin now uses <code>func</code> 0.18.0.</p>
+</li>
+<li>
+<p>In the upcoming OpenShift Serverless 1.19.0 release, the URL scheme of external routes will default to HTTPS for enhanced security.</p>
+<div class="paragraph">
+<p>If you do not want this change to apply for your workloads, you can override the default setting before upgrading to 1.19.0, by adding the following YAML to your <code>KnativeServing</code> custom resource (CR):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="nn">...</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">config</span><span class="pi">:</span>
+    <span class="na">network</span><span class="pi">:</span>
+      <span class="na">defaultExternalScheme</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http"</span>
+<span class="nn">...</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want the change to apply in 1.18.0 already, add the following YAML:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="nn">...</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">config</span><span class="pi">:</span>
+    <span class="na">network</span><span class="pi">:</span>
+      <span class="na">defaultExternalScheme</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https"</span>
+<span class="nn">...</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>In the upcoming OpenShift Serverless 1.19.0 release, the default service type by which the Kourier Gateway is exposed will be <code>ClusterIP</code> and not <code>LoadBalancer</code>.</p>
+<div class="paragraph">
+<p>If you do not want this change to apply to your workloads, you can override the default setting before upgrading to 1.19.0, by adding the following YAML to your <code>KnativeServing</code> custom resource (CR):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="nn">...</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">ingress</span><span class="pi">:</span>
+    <span class="na">kourier</span><span class="pi">:</span>
+      <span class="na">service-type</span><span class="pi">:</span> <span class="s">LoadBalancer</span>
+<span class="nn">...</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>You can now use <code>emptyDir</code> volumes with OpenShift Serverless. See the OpenShift Serverless documentation about Knative Serving for details.</p>
+</li>
+<li>
+<p>Rust templates are now available when you create a function using <code>kn func</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fixed-issues-1-18-0_serverless-release-notes"><a class="anchor" href="#fixed-issues-1-18-0_serverless-release-notes"></a>Fixed issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The prior 1.4 version of Camel-K was not compatible with OpenShift Serverless 1.17.0. The issue in Camel-K has been fixed, and Camel-K version 1.4.1 can be used with OpenShift Serverless 1.17.0.</p>
+</li>
+<li>
+<p>Previously, if you created a new subscription for a Kafka channel, or a new Kafka source, a delay was possible in the Kafka data plane becoming ready to dispatch messages after the newly created subscription or sink reported a ready status.</p>
+<div class="paragraph">
+<p>As a result, messages that were sent during the time when the data plane was not reporting a ready status, might not have been delivered to the subscriber or sink.</p>
+</div>
+<div class="paragraph">
+<p>In OpenShift Serverless 1.18.0, the issue is fixed and the initial messages are no longer lost. For more information about the issue, see <a href="https://access.redhat.com/articles/6343981">Knowledgebase Article #6343981</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="known-issues-1-18-0_serverless-release-notes"><a class="anchor" href="#known-issues-1-18-0_serverless-release-notes"></a>Known issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Older versions of the Knative <code>kn</code> CLI might use older versions of the Knative Serving and Knative Eventing APIs. For example, version 0.23.2 of the <code>kn</code> CLI uses the <code>v1alpha1</code> API version.</p>
+<div class="paragraph">
+<p>On the other hand, newer releases of OpenShift Serverless might no longer support older API versions. For example, OpenShift Serverless 1.18.0 no longer supports version <code>v1alpha1</code> of the <code>kafkasources.sources.knative.dev</code> API.</p>
+</div>
+<div class="paragraph">
+<p>Consequently, using an older version of the Knative <code>kn</code> CLI with a newer OpenShift Serverless might produce an error because the <code>kn</code> cannot find the outdated API. For example, version 0.23.2 of the <code>kn</code> CLI does not work with OpenShift Serverless 1.18.0.</p>
+</div>
+<div class="paragraph">
+<p>To avoid issues, use the latest <code>kn</code> CLI version available for your OpenShift Serverless release. For OpenShift Serverless 1.18.0, use Knative <code>kn</code> CLI 0.24.0.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://assets.openshift.net/content/modernizr.js" type="text/javascript"></script>
+  <script src="https://assets.openshift.net/content/subdomain.js" type="text/javascript"></script>
+  <script src="https://assets.openshift.net/content/nav-tertiary.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/reformat-html.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/hc-search.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/page-loader.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/clipboard.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/collapsible.js" type="text/javascript"></script>
+  <script>
+  var dk = 'openshift-serverless';
+  var version = 'Branch Build';
+
+  var distros = {
+    'openshift-origin': ['docs_origin', version],
+    // specific labels are used for OSD instead of the URL filter, due to its unusual URL structure; assume v4
+    'openshift-dedicated': ['docs_dedicated_v4'],
+    'openshift-online': ['docs_online', version],
+    'openshift-enterprise': ['docs_cp', version],
+    'openshift-aro' : ['docs_aro', version],
+    'openshift-rosa' : ['docs_rosa'],
+    'openshift-acs' : ['docs_acs', version]
+  };
+
+  // only OSD v3 docs have the version variable specified
+  if (dk == "openshift-dedicated" && version == "3") {
+    distros['openshift-dedicated'] = ['docs_dedicated_v3']
+  }
+
+  distros[dk] ? hcSearchCategory.apply(null, distros[dk]) : hcSearchCategory("docs");
+  </script>
+  <script type="text/javascript">
+  /*<![CDATA[*/
+  $(document).ready(function() {
+    $("[id^='topicGroup']").on('show.bs.collapse', function(event) {
+      if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+        $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+      }
+    });
+    $("[id^='topicGroup']").on('hide.bs.collapse', function(event) {
+      if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+        $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+      }
+    });
+    $("[id^='topicSubGroup']").on('show.bs.collapse', function() {
+      $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+    $("[id^='topicSubGroup']").on('hide.bs.collapse', function() {
+      $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+    $("[id^='topicSubSubGroup']").on('show.bs.collapse', function() {
+      $(this).parent().find("[id^='ssgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+    $("[id^='topicSubSubGroup']").on('hide.bs.collapse', function() {
+      $(this).parent().find("[id^='ssgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+
+    const collapsibleContent = document.getElementsByTagName("details");
+    for (var i = 0; i < collapsibleContent.length; i++) {
+      collapsibleContent[i].setAttribute("open", "");
+    }
+
+  });
+  /*]]>*/
+  </script>
+
+  <footer id="rh">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-2">
+                <img src="https://assets.openshift.com/hubfs/images/logos/Logo-RedHat-A-Reverse-RGB.svg" class="img-fluid" alt="Red Hat" style="height: 30px;">
+            </div>
+
+            <div class="col-sm-3">
+              <p class="text-nowrap">Copyright © 2023 Red Hat, Inc.</p>
+            </div>
+
+
+
+            <div class="col">
+                <nav class="nav">
+                    <a target="_blank" href="https://www.redhat.com/en/about/privacy-policy" class="nav-link">Privacy statement</a>
+                    <a target="_blank" href="https://www.openshift.com/legal/terms/" class="nav-link">Terms of use</a>
+                    <a target="_blank" href="https://www.redhat.com/en/about/all-policies-guidelines" class="nav-link">All policies and guidelines</a>
+                    <a id="teconsent"></a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="consent_blackbar" style="z-index: 100; position: fixed"></div>
+
+
+
+<!-- Adobe DTM -->
+<script type="text/javascript">
+if (("undefined" !== typeof _satellite) && ("function" === typeof _satellite.pageBottom)) {
+   _satellite.pageBottom();
+}
+</script>
+<!-- End Adobe DTM -->
+
+  <!-- adjust page css based on breadcrumb and/or resize -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => {
+      if ($(window).width() >= 1008) {
+        adjustSide();
+        adjustToc();
+        adjustMain();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if ($(window).width() >= 1008) {
+        adjustSide();
+        adjustToc();
+        adjustMain();
+      } else if ($(window).width() < 1008) {
+        sidebar.classList.remove('wide');
+        document.querySelector('#hc-search').classList.remove('wide');
+        if (sidebar.classList.contains('open')) {
+          sidebar.style.display = 'block';
+        } else {
+          sidebar.style.display = 'none';
+        }
+        document.querySelector('.main').style.paddingTop = '0px';
+      }
+    });
+
+    function adjustSide() {
+      sidebar.classList.add('wide');
+      document.querySelector('#hc-search').classList.add('wide');
+      sidebar.style.display = 'block';
+      document.querySelector('.sidebar').style.top = parseInt((document.querySelector('.breadcrumb').offsetHeight + 125), 10) + "px";
+      document.querySelector('#hc-search').style.top = parseInt((document.querySelector('.breadcrumb').offsetHeight + 95), 10) + "px";
+    }
+
+    function adjustToc() {
+      if (document.querySelector('#toc') !== null) {
+        document.querySelector('#toc').style.top = parseInt((document.querySelector('.breadcrumb').offsetHeight + 90), 10) + "px";
+      }
+    }
+
+    function adjustMain() {
+      document.querySelector('html').style.scrollPaddingTop = parseInt((document.querySelector('.breadcrumb').offsetHeight + 90), 10) + "px";
+      document.querySelector('.main').style.paddingTop = parseInt((document.querySelector('.breadcrumb').offsetHeight - 70), 10) + "px";
+    }
+
+  </script>
+
+  <!-- remove toc active class when page is loaded -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => {
+      var tocItems = $("#toc a");
+
+      for (let i = 0; i < tocItems.length; i++) {
+        tocItems[i].classList.remove("toc-active");
+      }
+    })
+  </script>
+
+  <!-- maintain sidebar scroll position between page loads -->
+  <script type="text/javascript">
+    let sidebar = document.querySelector(".sidebar");
+    let scrolltop = localStorage.getItem("sidebar-scroll");
+
+    if (scrolltop == null) {
+      sidebar.scrollTop = parseInt(top, 10);
+    }
+
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("sidebar-scroll", sidebar.scrollTop);
+    });
+
+    window.addEventListener('load', () => {
+      sidebar.scrollTo(0, scrolltop)
+    })
+  </script>
+
+  <!-- open/close the nav -->
+  <script type="text/javascript">
+    function closeNav() {
+      let sidebar = document.querySelector(".sidebar");
+      sidebar.style.display = "none";
+      sidebar.classList.remove('open');
+    }
+
+    function openNav() {
+      let sidebar = document.querySelector(".sidebar");
+      let hc_search = document.querySelector('#hc-search');
+      sidebar.style.display = "block";
+      sidebar.style.top = "0px";
+      hc_search.style.top = 'unset';
+      sidebar.classList.add('open');
+    }
+  </script>
+
+  <!-- clear and add toc-active to clicked toc link -->
+  <script type="text/javascript">
+  $("#toc a").click(function() {
+    var tocItems = $("#toc a");
+    for (let i = 0; i < tocItems.length; i++) {
+      tocItems[i].classList.remove("toc-active");
+    }
+    this.classList.add("toc-active");
+  });
+  </script>
+
+  <!-- update active toc class when mouse scrolls -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener("wheel", () => {
+
+        const ioConfiguration = {
+          "rootMargin": "-120px 0px -400px 0px",
+          "threshold": 0
+        };
+
+        const observer = new IntersectionObserver(setCurrent, ioConfiguration, entries => {
+          entries.forEach(entry => {
+            var id = entry.target.getAttribute('id');
+            //fight with js
+            document.querySelector(`#toc li a[href="#${id}"]`).classList.remove('toc-active');
+          });
+        });
+
+        //track all h1-4 headings that have an id
+        document.querySelectorAll('.main h2[id], .main h3[id]').forEach((h) => {
+          observer.observe(h);
+        });
+
+        //runs when the IntersectionObserver fires
+        function setCurrent(e) {
+          var allTocLinks = document.querySelectorAll("#toc li a");
+          if (allTocLinks !== undefined) {
+            e.map(i => {
+              if (i.isIntersecting && i.intersectionRatio >= 1) {
+                allTocLinks.forEach(link => link.classList.remove("toc-active"));
+                document.querySelector(`#toc li a[href="#${i.target.id}"]`).classList.add('toc-active')
+              }
+            })
+          }
+        };
+
+        //make clicked toc item active and stop IntersectionObserver
+        $("#toc a").click(function() {
+          //stop tracking all h1-4 headings that have an id
+          document.querySelectorAll('.main h2[id], .main h3[id]').forEach((h) => {
+            observer.unobserve(h);
+          });
+          var tocItems = $("#toc a");
+          if (tocItems !== undefined) {
+            for (let i = 0; i < tocItems.length; i++) {
+              tocItems[i].classList.remove("toc-active");
+            };
+            this.classList.add("toc-active");
+          }
+        })
+      })
+    })
+  </script>
+
+  <!--handle page scroll top and bottom, add toc-active -->
+  <script type="text/javascript">
+    document.addEventListener('scroll', () => {
+      //scroll to bottom
+      if(document.documentElement.scrollHeight === window.pageYOffset + window.innerHeight) {
+        var tocItems = $("#toc a");
+        for (let i = 0; i < tocItems.length; i++) {
+          tocItems[i].classList.remove("toc-active")
+          };
+          tocItems[tocItems.length - 1].classList.add("toc-active");
+        };
+      //scroll to top
+      if(window.pageYOffset === 0) {
+        var tocItems = $("#toc a");
+        for (let i = 0; i < tocItems.length; i++) {
+          tocItems[i].classList.remove("toc-active");
+          };
+          tocItems[0].classList.add("toc-active");
+        };
+      })
+  </script>
+
+  <!--adjust sidebar and toc when footer is displayed -->
+  <script type="text/javascript">
+    sidebar = document.querySelector('.sidebar')
+    toc = document.querySelector('#toc')
+    main = document.querySelector('.main')
+    okd_footer = document.querySelector('.footer-origin-docs')
+
+    //handle short pages
+    if (window.innerHeight === document.documentElement.scrollHeight) {
+      //sidebar
+      if (sidebar !== null && okd_footer == null) {
+        sidebar.style.marginBottom = "38px";
+        main.style.marginBottom = "35px";
+      };
+      //okd sidebar
+      if(sidebar !== null && okd_footer !== null) {
+        sidebar.style.marginBottom = "176px";
+        main.style.marginBottom = "135px";
+      }
+    };
+
+    //handle scrolling pages
+    document.addEventListener('scroll', () => {
+      //scroll to bottom
+      if ($(window).width() >= 1008) {
+        if(sidebar !== null) {
+          //pages with multiple toc entries
+          if(document.documentElement.scrollHeight === window.pageYOffset + window.innerHeight) {
+              //sidebar
+              if (sidebar !== null && okd_footer == null){
+                sidebar.style.marginBottom = "38px";
+                main.style.marginBottom = "35px";
+              };
+              //toc
+              if (toc !== null && okd_footer == null){
+                toc.style.bottom = "35px";
+              };
+              //okd sidebar
+              if(sidebar !== null && okd_footer !== null) {
+                sidebar.style.marginBottom = "176px";
+                main.style.marginBottom = "135px";
+              };
+              //okd toc
+              if (toc !== null && okd_footer !== null){
+                toc.style.bottom = "175px";
+              };
+            };
+          if(document.documentElement.scrollHeight != window.pageYOffset + window.innerHeight) {
+            sidebar.style.marginBottom = "0px";
+            if (toc !== null) {
+              toc.style.bottom = "0px";
+            }
+          }
+        }
+      }
+    })
+  </script>
+
+  <!-- adjust alerts on mobile -->
+  <script type="text/javascript">
+    alert = document.querySelector('#support-alert')
+    window.addEventListener("wheel", () => {
+      if ($(window).width() < 1008) {
+        //adjust alert
+        if(window.pageYOffset > 0) {
+          if(alert !== null) {
+            document.querySelector('#support-alert').style.position = "fixed";
+            document.querySelector('#support-alert').style.bottom = "0px";
+            document.querySelector('#support-alert').style.margin = "5px";
+            document.querySelector('#support-alert').style.zIndex = "9999999";
+          }
+        }
+      }
+   });
+    window.addEventListener('resize', () => {
+      if ($(window).width() >= 1008) {
+        if(alert !== null) {
+          document.querySelector('#support-alert').style.removeProperty('position');
+          document.querySelector('#support-alert').style.removeProperty('bottom');
+          document.querySelector('#support-alert').style.removeProperty('margin');
+          document.querySelector('#support-alert').style.removeProperty('zIndex');
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>

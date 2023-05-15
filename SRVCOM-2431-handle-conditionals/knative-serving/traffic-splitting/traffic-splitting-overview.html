@@ -1,0 +1,926 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8"> <![endif]-->
+<!--[if IE 9]> <html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  
+  
+  <title>Traffic splitting overview - Traffic splitting | Serving | OpenShift Serverless Branch Build</title>
+  <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" media="screen"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet"  media="screen"/>
+  <link href="https://assets.openshift.net/content/subdomain/touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" type="image/png"/>
+  <link href="https://assets.openshift.net/content/subdomain/favicon32x32.png" rel="shortcut icon" type="text/css"/>
+  <link href="https://assets.openshift.net/content/osh-nav-footer.css" rel="stylesheet" type="text/css" media="screen"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/docs.css" rel="stylesheet"  media="screen"/>
+  <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/print.css" rel="stylesheet" type="text/css" media="print"/>
+  <!--[if IE]><link rel="shortcut icon" href="https://assets.openshift.net/content/subdomain/favicon.ico"><![endif]-->
+  <!-- or, set /favicon.ico for IE10 win -->
+  <meta content="OpenShift" name="application-name">
+  <meta content="#000000" name="msapplication-TileColor">
+  <meta content="https://assets.openshift.net/content/subdomain/touch-icon-precomposed.png" name="msapplication-TileImage">
+
+  <!-- Adobe DTM -->
+  <script src="//www.redhat.com/dtm.js" type="text/javascript"></script>
+  <!-- End Adobe DTM -->
+
+  <script id="trustarc" src="https://static.redhat.com/libs/redhat/marketing/latest/trustarc/trustarc.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+        rel="stylesheet">
+
+</head>
+
+<body onload="selectVersion('Branch Build');">
+  
+<nav id="main">
+  <div class="container">
+    <div class="row">
+      <div class="navbar navbar-default navbar-openshift" role="navigation">
+        <div class="navbar-header">
+            <a href="#nav-main" class="dropdown-toggle navbar-menu-toggle hidden visible-xs" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+          <a class="navbar-brand" href="/"></a>
+        </div>
+        <div id="nav-main" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li id="products" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                Products <span class="fa fa-angle-down"></span>
+              </a>
+              <div class="dropdown-menu">
+                <div class="row flex-column flex-md-row">
+                  <div class="col-xs-12 col-sm-3">
+                    <h3>Overview</h3>
+                    <ul class="nav flex-column">
+                      <li><a target="_blank" href="https://www.openshift.com/products/features/">Features</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/products/pricing/">Pricing</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-12 col-sm-9">
+                    <h3>Featured Products</h3>
+                    <ul class="nav">
+                      <li>
+                        <a target="_blank" href="https://www.openshift.com/products/container-platform/">Red Hat OpenShift Container&nbsp;Platform</a>
+                        <p class="d-none d-md-block">Build, deploy and manage your applications across cloud- and on-premise infrastructure</p>
+                      </li>
+                      <li>
+                        <a target="_blank" href="https://www.openshift.com/products/dedicated/">Red Hat OpenShift Dedicated</a>
+                        <p class="d-none d-md-block">Single-tenant, high-availability Kubernetes clusters in the public cloud</p>
+                      </li>
+
+                      <li>
+                        <a target="_blank" href="https://www.openshift.com/products/online/">Red Hat OpenShift Online</a>
+                        <p class="d-none d-md-block">The fastest way for developers to build, host and scale applications in the public cloud</p>
+                      </li>
+
+                      <li class="nav-item">
+                        <a target="_blank" href="https://www.openshift.com/products/">All products <span class="fa fa-angle-right"></span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li id="learn" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Learn <span class="fa fa-angle-down"></span>
+              </a>
+              <div class="dropdown-menu">
+                <div class="row flex-md-nowrap">
+                  <div class="col-xs-12 col-sm-6">
+                    <h3>Learn</h3>
+                    <ul class="nav">
+                      <li><a target="_blank" href="https://www.openshift.com/learn/what-is-openshift/">What is OpenShift</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/get-started/">Get started</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/partners/">Partners</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/success-stories/">Customer success stories</a></li>
+                      <li><a target="_blank" href="https://blog.openshift.com">Blog</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/resources/">Resources</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-12 col-sm-6">
+                    <h3>Technology Topics</h3>
+                    <ul class="nav">
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/knative/">Knative</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/security/">Security</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/kubernetes/">Kubernetes</a></li>
+                      <li><a target="_blank" href="https://www.openshift.com/learn/topics/service-brokers/">Service Brokers</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Community <span class="fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a target="_blank" href="https://commons.openshift.org">OpenShift Commons</a></li>
+                <li><a target="_blank" href="https://www.okd.io">Open Source (OKD)</a></li>
+                <li><a target="_blank" href="https://www.openshift.com/community/programs/startups/">Startups</a></li>
+                <li><a target="_blank" href="https://www.openshift.com/community/programs/grants/">Grants</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Support <span class="fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a target="_blank" href="https://help.openshift.com">Help Center</a></li>
+                <li><a href="https://docs.openshift.com">OpenShift Docs</a></li>
+              </ul>
+            </li>
+
+            <li><a target="_blank" class="nav-sign-up" href="https://www.openshift.com/trial/">Free Trial</a></li>
+
+            <li><a target="_blank" href="https://console.redhat.com/openshift" class="nav-sign-in">Log In <span class="fa fa-angle-right"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container">
+    <button id="hc-open-btn" class="open-btn-sm" onclick="openNav()" aria-label="Open"><span class="fa fa-bars" /></button>
+    <ol class="breadcrumb hide-for-print">
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li class="sitename">
+        <a href="/">
+          Documentation</a>
+      </li>
+      <li class="hidden-xs active">
+        
+          
+              
+                <a href="../../about/serverless-release-notes.html">OpenShift Serverless Branch Build</a>
+              
+        
+        
+      </li>
+      <li class="hidden-xs active">
+        Serving
+      </li>
+      <li class="hidden-xs active"><a href="../../knative-serving/traffic-splitting/traffic-splitting-overview.html">Traffic splitting</a></li>
+      
+      <li class="hidden-xs active">
+        Traffic splitting overview
+      </li>
+      
+      <span text-align="right" style="float: right !important">
+        <a href="https://github.com/openshift/openshift-docs/commits/main/knative-serving/traffic-splitting/traffic-splitting-overview.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
+        
+        <a href="https://issues.redhat.com/secure/CreateIssueDetails!init.jspa?pid=12332330&issuetype=1&components=12367614&priority=4&summary=Issue+in+file+knative-serving/traffic-splitting/traffic-splitting-overview.adoc">
+          <span class="material-icons-outlined" title="Open an issue">bug_report</span>
+        </a>
+        <a href="javascript: void(0);" onclick="window.print()"><span class="material-icons-outlined" title="Print page (Save as PDF)">picture_as_pdf</span></a>
+        
+        
+      </span>
+      
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-3 col-md-3 sidebar sidebar-offcanvas hide-for-print">
+        <div class="row-fluid">
+          <div id="btn-close">
+            <button id="hc-close-btn" onclick="closeNav()" class="close-btn-sm" aria-label="close"><span class="fa fa-times" /></button>
+          </div>
+          <div id="hc-search">
+            <input id="hc-search-input" type="text" aria-label="search">
+            <button id="hc-search-btn" aria-label="search"><span class="fa fa-search" /></button>
+          </div>
+        </div>
+        <ul class="nav nav-sidebar">
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup0"><span id="tgSpan0" class="fa fa-angle-right"></span>About Serverless</a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../../about/serverless-release-notes.html">Release notes</a></li>
+            <li><a class="" href="../../about/about-serverless.html">Serverless overview</a></li>
+            <li><a class="" href="../../about/about-knative-serving.html">Knative Serving overview</a></li>
+            <li><a class="" href="../../about/about-knative-eventing.html">Knative Eventing overview</a></li>
+            <li><a class="" href="../../about/serverless-functions-about.html">Serverless Functions overview</a></li>
+            <li><a class="" href="../../about/serverless-support.html">Serverless support</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup1"><span id="tgSpan1" class="fa fa-angle-right"></span>Installing Serverless</a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../../install/preparing-serverless-install.html">Preparing to install OpenShift Serverless</a></li>
+            <li><a class="" href="../../install/install-serverless-operator.html">Installing the Serverless Operator</a></li>
+            <li><a class="" href="../../install/installing-kn.html">Installing the Knative CLI</a></li>
+            <li><a class="" href="../../install/installing-knative-serving.html">Installing Knative Serving</a></li>
+            <li><a class="" href="../../install/installing-knative-eventing.html">Installing Knative Eventing</a></li>
+            <li><a class="" href="../../install/serverless-kafka-admin.html">Configuring Knative for Apache Kafka</a></li>
+            <li><a class="" href="../../install/configuring-serverless-functions.html">Configuring Serverless Functions</a></li>
+            <li><a class="" href="../../install/serverless-upgrades.html">Serverless upgrades</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup2"><span id="tgSpan2" class="fa fa-angle-down"></span>Serving</a>
+      <ul id="topicGroup2" class="collapse in list-unstyled">
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-0"><span id="sgSpan-2-0" class="fa fa-caret-right"></span>&nbsp;Getting started with Knative Serving</a>
+              <ul id="topicSubGroup-2-0" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../knative-serving/getting-started/serverless-applications.html">Creating Serverless applications</a></li>
+                  <li><a class="" href="../../knative-serving/getting-started/verifying-application-deployment.html">Verifying application deployment</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-1"><span id="sgSpan-2-1" class="fa fa-caret-right"></span>&nbsp;Autoscaling</a>
+              <ul id="topicSubGroup-2-1" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../knative-serving/autoscaling/serverless-autoscaling-developer.html">Autoscaling overview</a></li>
+                  <li><a class="" href="../../knative-serving/autoscaling/serverless-autoscaling-developer-scale-bounds.html">Scale bounds</a></li>
+                  <li><a class="" href="../../knative-serving/autoscaling/serverless-concurrency.html">Concurrency</a></li>
+                  <li><a class="" href="../../knative-serving/autoscaling/serverless-autoscaling-scale-to-zero.html">Scale-to-zero</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-2"><span id="sgSpan-2-2" class="fa fa-caret-right"></span>&nbsp;Configuring Serverless applications</a>
+              <ul id="topicSubGroup-2-2" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../knative-serving/config-applications/overriding-config-serving.html">Overriding system deployment configurations</a></li>
+                  <li><a class="" href="../../knative-serving/config-applications/multi-container-support-for-serving.html">Multi-container support</a></li>
+                  <li><a class="" href="../../knative-serving/config-applications/empty-dir.html">EmptyDir volumes</a></li>
+                  <li><a class="" href="../../knative-serving/config-applications/pvcs-for-serving.html">Persistent Volume Claims</a></li>
+                  <li><a class="" href="../../knative-serving/config-applications/init-containers.html">Init containers</a></li>
+                  <li><a class="" href="../../knative-serving/config-applications/resolving-image-tags-to-digests.html">Resolving image tags to digests</a></li>
+                  <li><a class="" href="../../knative-serving/config-applications/serverless-config-tls.html">Configuring TLS authentication</a></li>
+                  <li><a class="" href="../../knative-serving/config-applications/restrictive-network-policies.html">Restrictive network policies</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-3"><span id="sgSpan-2-3" class="fa fa-caret-down"></span>&nbsp;Traffic splitting</a>
+              <ul id="topicSubGroup-2-3" class="nav-tertiary list-unstyled collapse in">
+
+                  <li><a class=" active" href="../../knative-serving/traffic-splitting/traffic-splitting-overview.html">Traffic splitting overview</a></li>
+                  <li><a class="" href="../../knative-serving/traffic-splitting/traffic-spec-examples.html">Traffic spec examples</a></li>
+                  <li><a class="" href="../../knative-serving/traffic-splitting/traffic-splitting-using-cli.html">Traffic splitting using the CLI</a></li>
+                  <li><a class="" href="../../knative-serving/traffic-splitting/traffic-splitting-flags.html">CLI flags for traffic splitting</a></li>
+                  <li><a class="" href="../../knative-serving/traffic-splitting/traffic-splitting-revisions.html">Splitting traffic between revisions</a></li>
+                  <li><a class="" href="../../knative-serving/traffic-splitting/traffic-splitting-blue-green.html">Reroute traffic using blue-green strategy</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-4"><span id="sgSpan-2-4" class="fa fa-caret-right"></span>&nbsp;External and Ingress routing</a>
+              <ul id="topicSubGroup-2-4" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../knative-serving/external-ingress-routing/routing-overview.html">Routing overview</a></li>
+                  <li><a class="" href="../../knative-serving/external-ingress-routing/customize-labels-annotations-routes.html">Customizing labels and annotations</a></li>
+                  <li><a class="" href="../../knative-serving/external-ingress-routing/configuring-service-routes.html">Configuring routes for Knative services</a></li>
+                  <li><a class="" href="../../knative-serving/external-ingress-routing/https-redirect-global.html">Global HTTPS redirection</a></li>
+                  <li><a class="" href="../../knative-serving/external-ingress-routing/url-scheme-external-routes.html">URL scheme for external routes</a></li>
+                  <li><a class="" href="../../knative-serving/external-ingress-routing/https-redirect-per-service.html">HTTPS redirection per service</a></li>
+                  <li><a class="" href="../../knative-serving/external-ingress-routing/cluster-local-availability.html">Cluster local availability</a></li>
+                  <li><a class="" href="../../knative-serving/external-ingress-routing/kourier-gateway-service-type.html">Kourier Gateway service type</a></li>
+                  <li><a class="" href="../../knative-serving/external-ingress-routing/using-http2-gRPC.html">Using HTTP2 and gRPC</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-5"><span id="sgSpan-2-5" class="fa fa-caret-right"></span>&nbsp;Configuring access to Knative services</a>
+              <ul id="topicSubGroup-2-5" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../knative-serving/config-access/serverless-ossm-with-kourier-jwt.html">Configuring JSON Web Token authentication for Knative services</a></li>
+                  <li><a class="" href="../../knative-serving/config-access/serverless-ossm-v2x-jwt.html">Using JSON Web Token authentication with Service Mesh 2.x</a></li>
+                  <li><a class="" href="../../knative-serving/config-access/serverless-ossm-v1x-jwt.html">Using JSON Web Token authentication with Service Mesh 1.x</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-6"><span id="sgSpan-2-6" class="fa fa-caret-right"></span>&nbsp;Configuring custom domains for Knative services</a>
+              <ul id="topicSubGroup-2-6" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../knative-serving/config-custom-domains/serverless-custom-domains.html">Configuring custom domains overview</a></li>
+                  <li><a class="" href="../../knative-serving/config-custom-domains/create-domain-mapping.html">Custom domain mapping</a></li>
+                  <li><a class="" href="../../knative-serving/config-custom-domains/create-domain-mapping-kn.html">Custom domains using the Knative CLI</a></li>
+                  <li><a class="" href="../../knative-serving/config-custom-domains/domain-mapping-odc-developer.html">Domain mapping using the Developer perspective</a></li>
+                  <li><a class="" href="../../knative-serving/config-custom-domains/domain-mapping-odc-admin.html">Domain mapping using the Administrator perspective</a></li>
+                  <li><a class="" href="../../knative-serving/config-custom-domains/domain-mapping-custom-tls-cert.html">Securing a mapped service using a TLS certificate</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-7"><span id="sgSpan-2-7" class="fa fa-caret-right"></span>&nbsp;Configuring high availability for Knative services</a>
+              <ul id="topicSubGroup-2-7" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../knative-serving/config-ha-services/ha-services-overview.html">High availability for Knative services overview</a></li>
+                  <li><a class="" href="../../knative-serving/config-ha-services/ha-replicas-serving.html">High availability for Knative services</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup3"><span id="tgSpan3" class="fa fa-angle-right"></span>Eventing</a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../../eventing/knative-eventing.html">Knative Eventing</a></li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-1"><span id="sgSpan-3-1" class="fa fa-caret-right"></span>&nbsp;Event sources</a>
+              <ul id="topicSubGroup-3-1" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../eventing/event-sources/knative-event-sources.html">Event sources overview</a></li>
+                  <li><a class="" href="../../eventing/event-sources/event-source-admin-perspective.html">Event source in the Administrator perspective</a></li>
+                  <li><a class="" href="../../eventing/event-sources/serverless-apiserversource.html">Creating an API server source</a></li>
+                  <li><a class="" href="../../eventing/event-sources/serverless-pingsource.html">Creating a ping source</a></li>
+                  <li><a class="" href="../../eventing/event-sources/serverless-kafka-developer-source.html">Source for Apache Kafka</a></li>
+                  <li><a class="" href="../../eventing/event-sources/serverless-custom-event-sources.html">Custom event sources</a></li>
+                  <li><a class="" href="../../eventing/event-sources/serverless-sink-source-odc.html">Connecting an event source to a sink using the Developer perspective</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-2"><span id="sgSpan-3-2" class="fa fa-caret-right"></span>&nbsp;Event sinks</a>
+              <ul id="topicSubGroup-3-2" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../eventing/event-sinks/serverless-event-sinks.html">Event sinks overview</a></li>
+                  <li><a class="" href="../../eventing/event-sinks/serverless-creating-sinks.html">Creating event sinks</a></li>
+                  <li><a class="" href="../../eventing/event-sinks/serverless-kafka-developer-sink.html">Sink for Apache Kafka</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-3"><span id="sgSpan-3-3" class="fa fa-caret-right"></span>&nbsp;Brokers</a>
+              <ul id="topicSubGroup-3-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../eventing/brokers/serverless-brokers.html">Brokers overview</a></li>
+                  <li><a class="" href="../../eventing/brokers/serverless-broker-types.html">Broker types</a></li>
+                  <li><a class="" href="../../eventing/brokers/serverless-using-brokers.html">Creating brokers</a></li>
+                  <li><a class="" href="../../eventing/brokers/serverless-broker-backing-channel-default.html">Configuring the default broker backing channel</a></li>
+                  <li><a class="" href="../../eventing/brokers/serverless-global-config-broker-class-default.html">Configuring the default broker class</a></li>
+                  <li><a class="" href="../../eventing/brokers/kafka-broker.html">Knative broker for Apache Kafka</a></li>
+                  <li><a class="" href="../../eventing/brokers/serverless-using-brokers-managing-brokers.html">Managing brokers</a></li>
+                  <li><a class="" href="../../eventing/brokers/serverless-event-delivery.html">Event delivery</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-4"><span id="sgSpan-3-4" class="fa fa-caret-right"></span>&nbsp;Triggers</a>
+              <ul id="topicSubGroup-3-4" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../eventing/triggers/serverless-triggers.html">Triggers overview</a></li>
+                  <li><a class="" href="../../eventing/triggers/create-triggers.html">Creating triggers</a></li>
+                  <li><a class="" href="../../eventing/triggers/list-triggers-cli.html">List triggers from the command line</a></li>
+                  <li><a class="" href="../../eventing/triggers/describe-triggers-cli.html">Describe triggers from the command line</a></li>
+                  <li><a class="" href="../../eventing/triggers/connect-trigger-sink.html">Connecting a trigger to a sink</a></li>
+                  <li><a class="" href="../../eventing/triggers/filter-triggers-cli.html">Filtering triggers from the command line</a></li>
+                  <li><a class="" href="../../eventing/triggers/update-triggers-cli.html">Updating triggers from the command line</a></li>
+                  <li><a class="" href="../../eventing/triggers/delete-triggers-cli.html">Deleting triggers from the command line</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-5"><span id="sgSpan-3-5" class="fa fa-caret-right"></span>&nbsp;Channels</a>
+              <ul id="topicSubGroup-3-5" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../eventing/channels/serverless-channels.html">Channels and subscriptions</a></li>
+                  <li><a class="" href="../../eventing/channels/serverless-creating-channels.html">Creating channels</a></li>
+                  <li><a class="" href="../../eventing/channels/connecting-channels-sinks.html">Connecting channels to sinks</a></li>
+                  <li><a class="" href="../../eventing/channels/serverless-channel-default.html">Default channel implementation</a></li>
+                  <li><a class="" href="../../eventing/channels/serverless-kafka-admin-security-channels.html">Security configuration for channels</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-6"><span id="sgSpan-3-6" class="fa fa-caret-right"></span>&nbsp;Subscriptions</a>
+              <ul id="topicSubGroup-3-6" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../eventing/subscriptions/serverless-subs.html">Creating subscriptions</a></li>
+                  <li><a class="" href="../../eventing/subscriptions/serverless-subs-managing.html">Managing subscriptions</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-7"><span id="sgSpan-3-7" class="fa fa-caret-right"></span>&nbsp;Event discovery</a>
+              <ul id="topicSubGroup-3-7" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../eventing/discovery/serverless-listing-event-sources.html">Listing event sources and event source types</a></li>
+                  <li><a class="" href="../../eventing/discovery/list-event-source-types-cli.html">Listing event source types from the command line</a></li>
+                  <li><a class="" href="../../eventing/discovery/list-event-source-types-odc.html">Listing event source types from the Developer perspective</a></li>
+                  <li><a class="" href="../../eventing/discovery/list-event-sources-cli.html">Listing event sources from the command line</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-3-8"><span id="sgSpan-3-8" class="fa fa-caret-right"></span>&nbsp;Tuning eventing configuration</a>
+              <ul id="topicSubGroup-3-8" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../eventing/tuning/overriding-config-eventing.html">Overriding deployment configurations</a></li>
+                  <li><a class="" href="../../eventing/tuning/serverless-ha.html">High availability</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup4"><span id="tgSpan4" class="fa fa-angle-right"></span>Functions</a>
+      <ul id="topicGroup4" class="collapse  list-unstyled">
+            <li><a class="" href="../../functions/serverless-functions-setup.html">Setting up OpenShift Serverless Functions</a></li>
+            <li><a class="" href="../../functions/serverless-functions-getting-started.html">Getting started with functions</a></li>
+            <li><a class="" href="../../functions/serverless-functions-on-cluster-builds.html">On-cluster function building and deploying</a></li>
+            <li><a class="" href="../../functions/serverless-developing-quarkus-functions.html">Developing Quarkus functions</a></li>
+            <li><a class="" href="../../functions/serverless-developing-nodejs-functions.html">Developing Node.js functions</a></li>
+            <li><a class="" href="../../functions/serverless-developing-typescript-functions.html">Developing TypeScript functions</a></li>
+            <li><a class="" href="../../functions/serverless-developing-python-functions.html">Developing Python functions</a></li>
+            <li><a class="" href="../../functions/serverless-functions-eventing.html">Using functions with Knative Eventing</a></li>
+            <li><a class="" href="../../functions/serverless-functions-yaml.html">Function project configuration in func.yaml</a></li>
+            <li><a class="" href="../../functions/serverless-functions-accessing-secrets-configmaps.html">Accessing secrets and config maps from functions</a></li>
+            <li><a class="" href="../../functions/serverless-functions-annotations.html">Adding annotations to functions</a></li>
+            <li><a class="" href="../../functions/serverless-functions-reference-guide.html">Functions development reference guide</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup5"><span id="tgSpan5" class="fa fa-angle-right"></span>Knative CLI</a>
+      <ul id="topicGroup5" class="collapse  list-unstyled">
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-0"><span id="sgSpan-5-0" class="fa fa-caret-right"></span>&nbsp;Knative Serving CLI commands</a>
+              <ul id="topicSubGroup-5-0" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../cli_tools/serving_cli/kn-service.html">kn service commands</a></li>
+                  <li><a class="" href="../../cli_tools/serving_cli/kn-service-offline.html">kn service commands in offline mode</a></li>
+                  <li><a class="" href="../../cli_tools/serving_cli/kn-container.html">kn container commands</a></li>
+                  <li><a class="" href="../../cli_tools/serving_cli/kn-domain.html">kn domain commands</a></li>              </ul>
+            </li>
+            <li><a class="" href="../../cli_tools/advanced-kn-config.html">Configuring the Knative CLI</a></li>
+            <li><a class="" href="../../cli_tools/kn-plugins.html">Knative CLI plugins</a></li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-3"><span id="sgSpan-5-3" class="fa fa-caret-right"></span>&nbsp;Knative Eventing CLI commands</a>
+              <ul id="topicSubGroup-5-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../cli_tools/eventing_cli/kn-source.html">kn source commands</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-4"><span id="sgSpan-5-4" class="fa fa-caret-right"></span>&nbsp;Knative Functions CLI commands</a>
+              <ul id="topicSubGroup-5-4" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../cli_tools/functions_cli/kn-functions.html">kn functions commands</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup6"><span id="tgSpan6" class="fa fa-angle-right"></span>Observability</a>
+      <ul id="topicGroup6" class="collapse  list-unstyled">
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-0"><span id="sgSpan-6-0" class="fa fa-caret-right"></span>&nbsp;Administrator metrics</a>
+              <ul id="topicSubGroup-6-0" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../observability/admin-metrics/serverless-admin-metrics.html">Administrator metrics overview</a></li>
+                  <li><a class="" href="../../observability/admin-metrics/serverless-controller-metrics.html">Controller metrics</a></li>
+                  <li><a class="" href="../../observability/admin-metrics/serverless-webhook-metrics.html">Webhook metrics</a></li>
+                  <li><a class="" href="../../observability/admin-metrics/serverless-admin-metrics-eventing.html">Knative Eventing metrics</a></li>
+                  <li><a class="" href="../../observability/admin-metrics/serverless-admin-metrics-serving.html">Knative Serving metrics</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-1"><span id="sgSpan-6-1" class="fa fa-caret-right"></span>&nbsp;Developer metrics</a>
+              <ul id="topicSubGroup-6-1" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../observability/developer-metrics/serverless-developer-metrics.html">Developer metrics overview</a></li>
+                  <li><a class="" href="../../observability/developer-metrics/serverless-monitoring-services-default-metrics.html">Default Knative service metrics</a></li>
+                  <li><a class="" href="../../observability/developer-metrics/serverless-monitoring-services-custom-metrics.html">Custom Knative service metrics</a></li>
+                  <li><a class="" href="../../observability/developer-metrics/serverless-monitoring-services-configuration-scraping.html">Configuration for scraping custom metrics</a></li>
+                  <li><a class="" href="../../observability/developer-metrics/serverless-monitoring-services-examining-metrics.html">Examining metrics of a service</a></li>
+                  <li><a class="" href="../../observability/developer-metrics/serverless-developer-metrics-dashboard.html">Dashboard for service metrics</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-2"><span id="sgSpan-6-2" class="fa fa-caret-right"></span>&nbsp;Cluster logging</a>
+              <ul id="topicSubGroup-6-2" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../observability/cluster-logging/cluster-logging-serverless.html">Using OpenShift Logging with Serverless</a></li>
+                  <li><a class="" href="../../observability/cluster-logging/finding-serving-logs-components.html">Finding logs for Knative Serving components</a></li>
+                  <li><a class="" href="../../observability/cluster-logging/finding-serving-logs-services.html">Finding logs for Knative Serving services</a></li>              </ul>
+            </li>
+            <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-3"><span id="sgSpan-6-3" class="fa fa-caret-right"></span>&nbsp;Tracing</a>
+              <ul id="topicSubGroup-6-3" class="nav-tertiary list-unstyled collapse">
+
+                  <li><a class="" href="../../observability/tracing/serverless-tracing.html">Tracing requests</a></li>
+                  <li><a class="" href="../../observability/tracing/serverless-tracing-open-telemetry.html">Using Red Hat OpenShift distributed tracing</a></li>
+                  <li><a class="" href="../../observability/tracing/serverless-tracing-jaeger.html">Using Jaeger distributed tracing</a></li>              </ul>
+            </li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup7"><span id="tgSpan7" class="fa fa-angle-right"></span>Integrations</a>
+      <ul id="topicGroup7" class="collapse  list-unstyled">
+            <li><a class="" href="../../integrations/serverless-ossm-setup.html">Integrating Service Mesh with OpenShift Serverless</a></li>
+            <li><a class="" href="../../integrations/serverless-cost-management-integration.html">Integrating Serverless with the cost management service</a></li>
+            <li><a class="" href="../../integrations/gpu-resources.html">Using NVIDIA GPU resources with serverless applications</a></li>
+      </ul>
+    </li>
+    <li class="nav-header"><a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup8"><span id="tgSpan8" class="fa fa-angle-right"></span>Removing Serverless</a>
+      <ul id="topicGroup8" class="collapse  list-unstyled">
+            <li><a class="" href="../../removing/removing-openshift-serverless.html">Removing Serverless overview</a></li>
+            <li><a class="" href="../../removing/uninstalling-knative-eventing.html">Uninstalling Knative Eventing</a></li>
+            <li><a class="" href="../../removing/uninstalling-knative-serving.html">Uninstalling Knative Serving</a></li>
+            <li><a class="" href="../../removing/removing-serverless-operator.html">Removing Serverless Operator</a></li>
+            <li><a class="" href="../../removing/deleting-serverless-crds.html">Deleting Serverless CRDs</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div id="hc-search-modal">
+        <div id="hc-modal-content">
+          <span id="hc-modal-close">&times;</span>
+          <div id="hc-search-results-wrapper">
+            <div id="hc-search-results"></div>
+            <div id="hc-search-progress-indicator" class="text-center search-progress-indicator"><i class="fa fa-circle-o-notch fa-spin" style="font-size:42px"></i></div>
+            <div class="text-center">
+              <button id="hc-search-more-btn">Show more results</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="print-logo" style="display:none;">
+        <img src="https://www.redhat.com/cms/managed-files/Logo-Red_Hat-OpenShift-A-Standard-RGB_0_0.svg" alt="print logo"/>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h1>
+            Traffic splitting overview
+          </h1>
+        </div>
+        
+        
+        <!-- toc disabled -->
+<div class="paragraph">
+<p>In a Knative application, traffic can be managed by creating a traffic split. A traffic split is configured as part of a route, which is managed by a Knative service.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABfAAAAM3CAIAAAD9ZeYWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LmVkYTJiM2ZhYywgMjAyMS8xMS8xNy0xNzoyMzoxOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIzLjEgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDlFODY0OTY1NkUxMTFFQzlFRjFDOTA2M0ZDRUU5OUMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDlFODY0OTc1NkUxMTFFQzlFRjFDOTA2M0ZDRUU5OUMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0OUU4NjQ5NDU2RTExMUVDOUVGMUM5MDYzRkNFRTk5QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0OUU4NjQ5NTU2RTExMUVDOUVGMUM5MDYzRkNFRTk5QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqEhun0AALeXSURBVHja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ffv2nTVrVlZWVumXioqKJk6ceMkll/Ts2fPUFCYjI2P06NFdu3Zt0aJF48aNk5OTL7/88pkzZ5YuI+ps2rRpWlra0qVLO3To0KRJk+bNm4tiM2bMOIfaNOvXrx8yZEhKSoqoTRQbOHDgpk2b7rjjjmuuuaagoKB0yXXr1g0ePLhVq1aiZMuWLVNTU1evXl2mtuXLl/fo0UPsVCsjdjpp0qQy9QAAAKCS4bblAADd085JGTVq1IIFCz788MOnn346+NL8+fM3b948depUo9F46skv77333qRJk3r16nXjjTdWq1btl19+mTZt2k033eTz+W6++WatjCRJVqv1k08+2bJliyj5xBNPrF+//v3337/ttts8Hs/tt9/+l2oTFi1aNGzYMNFmUezyyy8vKCiYM2fOoEGDXC5XdHR06eZ9/vnnt9xyi1g5cuTIlJSUjRs3zpgx4+qrr541a1bfvn21MmvWrElNTU1ISHj22WcTExN37dq1dOlSUV7sfcKECcwADQAAUFlJnJgNANCvbdu2dezYcdiwYW+//bbP5+vdu/f27dvXrVsXFxcnXnW73V27dnU4HGvWrImIiBg3btxDDz0klsUm2uaHDh3Kz89v0qRJsMJNmzb16tWrWrVqK1eujIyMFGveeeed+++/v0uXLh9++GF8fLxW7LvvvktNTa1SpYpYiI2NPfva9u/f37lzZ7EwZ86c9u3bB0uKyh944IHExMTly5drsc7u3bs7dOhQt27duXPn1qpVSysmNh84cODBgwe///57beWNN94oKl+9enVSUlKwtsWLF4udtm7dmncIAABAZcUlVwCASsJkMo0aNSorK2vOnDnamiVLlqSlpf3rX/+KiIg47Sbx8fGl8xchOTn5iiuu2Lt375EjR4IrfT7f/fffH0xzhM6dO/ft23f79u07d+78S7W9//77+/fvHzduXOk0R7jppptatGjhcrmCa6ZMmVJcXCweg2mOIJYnT56cl5c3ffp0bU12dnZcXFzpNEfo1asXaQ4AAEDlRqADAKg8unfv3q1bt4kTJzocDkPJyTV169ZNTU39462ys7O3b9++Y8cObasqVaooilLm+iyr1Vpmq+TkZFHG5/OdfW2i8PLly5s1a9azZ89Tm1H68iiPx7Ny5cr69etbLJYdv2cymcRBff3111rJvn37btu27cEHH9ywYcPRo0dP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ix955JF7773XwuF0UUNDw6mnnnr55ZdHL5csWfLlL39548aN1dXVuWhO8N5774XEnj17vvjii0899VSbwWoUVcz9yO+6665HHXXUnXfeGQa94Xd46NChv/71r9etWxd+qE855ZQttWTQoEHTp08PP+/hb8rDDz8chV1C4he/+MVJkyZtafrDqlWrwug6fE3aDJWDvfbaK7Qt/DlYs2ZNm9F4h6u/FWU5JNiqn/3sZ+eee24ymezdu3dXjpmKiopwSN9yyy3f//73c4krV66cMGHC8uXL22T+5Cc/+cwzz+QmqQU333xz/r+4Osk5derUBx54IKoxnU6vXbtWQIdCEtDhQ+2CCy4IJyjhrNofez5WmpubR4wY0UmGsrKy47PyE1evXr1w4cLPfvazUUDnU5/61I477hhStlTIokWLNm/ePGzYsA63hpHA66+/Hi3WEwar4cQ9iuYE4YzqJz/5yZNPPnnyySe3Gd+GPOE8qcCTnGH72rBhw5w5c8JQeat/eqIZcOGLcP755+ff1gc6l8lkwgGTuwVheDJ69Oj/+I//CAPFe+6557TTTovSS7PWrVt3+umnf/e7322/FHdIyQ+sT5w48d577w3jyf/8z/+88MILH3vssXAYH3zwwcOHD++kMV/4whcOO+yw+fPn/+EPfwjD3cWLF7/wwgv/nXX33Xe3uQn6/44fSkrCt6M1q82mkBK1c6t/CEInOBLouvHjx9fV1d1yyy3hNCMclludC5xMJvfff/9weOcnDhgw4Oqrr37uuefyVyUPOQ844IA2aw5+6Utf2rRpU5sZOh3mnDRpUkgpLy9//PHHlyxZYpIyBSagw4faoVn6AboiDAbefvvtH/7wh9HLgQMHjho1KpyRh8FAhxMH/uu//qtPnz7RSg1tNDQ0fO973zvvvPOi/0FFazTktoazlpDefiZOOMX/9re/7YMg7sL3KIyEW1paOjkvD1ubmpr222+/iy666Itf/KJOY1ulUqn8l+ecc074TQ7H1e23337SSSdF18zutNNOO+yww+rVq1966aUdd9yxwxtj5QtDzREjRjz77LNPPPHEPvvss2jRolBOJ9Nzcvr27Tsuq0d28uYDDzxw/vnnP/TQQ08++WQYRbfPv9dee0UzQF955ZU2y9/8/ve/D28t/DkwSYHtK5zJTJ48Ofze3nTTTT//+c/r6up69uzZSdi9ubl59OjRuWWbIqWlpV/O2mp1gwcPzp1Qde7YrB7Z4H74RvikKDB3uQL4KHjrrbfCmcdnP/vZ3Ml3GIuGU5aQ3uEtsV599dVwyn7UUUcNHTq0/dbbbrstnJGfe+650ctwwpRbuyHS+QojEGv5d1xuLxz8YSDRv3//H/zgB48//rhoDtvFwQcf/I//+I/hycKFCx977LEosbq6Orrn4KJFi/75n/85f0rLyy+//Prrr7cppLKycsKECeHHOfzCX3HFFWFAO2TIkGOOOabzqp955pnFixfnXlZVVe27777RCiOrVq3qcJdQ5i677BK+C9ddd13+pVVhNHv77beHdg4bNqzNOiOwXQwcOPCGG2546KGHjj766KasLeUMX4TwFShk2zq8qBDeb2boAMTMm2++GQaT+csBvvTSS1/72tfefffdu+66K3/Jg89//vNHHnlkOK0fPnz45z73uVz62rVrJ0+enEqlLr744vblv/3229OnT7/mmmtyVYTd58yZk0wmo/8Pb9iwYfny5eGM32fBx0oYpjY2Nvbs2fOss8668MILP/WpT+kTtpdEInHGGWfMnTs3nU7feuutxxxzTHTJ0jnnnDN79uzFixfPmjVr3bp10S/5ihUrZs6cWVlZee+997a5pc748eNvuummjRs3hr8LYXg5bty4zpfrfvnllydOnBiO7ZNOOikKwYSD/M4772xoaAg7tpndkD+o/vrXv37ZZZctWLDgxBNPDC0PjVm/fv0dd9wR/oKEDOFPzFbXrIVuC8fqAw88cP/99994440LFy4Mh1/+IscflGjaXftLI+F9JaADECfhjHnChAnhZD2cpu+///7hzPvJJ5+cM2dOr169wpn9YYcdlp+5qqoqDAzC2XY4Uz/33HNPOOGEkPLiiy+GE6Bly5aF4UGH/0G97rrrBg0adOqpp+ZSwo5hl0suueQHP/hBOFO56KKL+vfvH/0zGT4mmpubw8E/duzYiy++2LXA/D2i8V77FWSOPvro/fbb74UXXvjd7373+OOPH3fccT2yS37MnDlz0qRJixcvvueee37+859HJUR3+VmwYEGbgM5uu+12xBFHhD8HYYhbW1vbZqWzqN6we6721157raGhIfxlmT59ev5aIeXl5RdeeOGoUaM63CsIW1euXPmTn/zkuazoxlshPbRqypQpp59++pZq3Go6dEU45MLhHb414Qty++23r169umfPnltdzP591bt370QiUV1d7dOhkAR0AOKkoqLivPPOuz9rxowZJSUle++99ze+8Y3Jkyfn33MhZ8iQIXPmzJk2bdott9wSznjCOfq777574IEHzp49O3/OTk4YSzzwwANh2JC/ekivXr3CWfs555xzwAEHRGtwzpo1q6qqysfBx0Fra2sY8Y4YMeLiiy+eMGGCBS/5O0WHUPuRZxiOnnHGGQsWLAg/s+E3dsyYMeEHv0d2ZZzHHnvsxhtv/N3vfrds2bIwjg2/9gcffPCZZ565zz77tC//lFNOie5xfvjhh+ciMjmh3tCAXO0h8x577PHTn/40/PiHwpPJZPhtD0f7V7/61XC0b2mvHtlF06ZPn37ooYfeddddL7300ubNm/v06bP//vuHt9Dmj0v7fTtPh66rra399re/HS2s88tf/jL8Vne4jHdhXH755SeccELnN7WA7a5IXBwgjtauXRtOXMKp8A477FBZWbnV/OFMPYwTwin+4MGDwyn+lhbXfO+998J5ee7eK/kaGxujO31++tOfjhbshI+k11577aijjgoHfBg5h2/ZjjvueHZW55eutHHEDUvm/fG9uVfuPXqoC0/4m6ampmjRmZqamvbL1adSqZUrV/bIzl4ZOHBgm6tIwo9zdJPy3llbqiKdTr/99tutra0hT58+fdpsXb9+/YYNGxKJxM4775x/I6pwwIfCQwNCYpubkYeiVq9eHR7D4LnDJfZDdclkMvwl2mmnndpv3VKN69at27RpU/t06N7v57x5866//vq5c+eGL044S6mvr580adL06dP1Jx9tZugAxFIYZG5T/sFZW83WN6vDTeFk3V1L+PgI49uKiorTTz/929/+dodrh0M3hIPq05/+9Ja2JhKJTtZmqs7aahXFxcW77rrrlrb2yerwF35Le4XhcScFBm0CQF2ssV+WQ4LtZfTo0Yceeugvf/nLa6+9dvHixWYt8DFhliMAwN+0trbW19cffPDB991336xZs0RzAGIhkUicdtppv/3tb6dMmVJVVRV+yfUJH3lm6AAA/E1tbe2PfvSjiRMnugwEIHb69u17xRVXjB8//s9//nMh6924ceOKFSuGDx/uI6CQzNABAPibT33qU1/+8pdFcwDia999981f2LsArrzyyrFjxy5ZskTnU0gCOgAAANB9r7/+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Ouqoo8Jef/jDH775zW9GQ1b40HrjjTfC4fqLX/xi3bp1e++9dyGrnjp1aviyjBw50qdAIQnoAABA4TQ1NY0ZM+baa6/NT2xsbDzvvPPuu+++5cuX33nnnVdfffX7UfXuu+/+4x//eJt2SSQSX8/ywfFhtmnTplmzZs2YMWPVqlVVVVU9e/YsKioqZAP2zvJBUGACOgAAUDhhnJlMJtskVlZWXnLJJY8++ui6deuee+65NltbW1uff/75d955p6ysbPjw4Z/85CfzN82dO3fz5s1hBDt69Ojy8vL8Hd96660FCxak0+mRI0cOGTJk0aJFixcvDnkOO+yw/Kuu3njjjZDe0tLSt2/fMCjt169fblNDQ8PTTz8dHnfffffPfOYzbRq2Zs2al156qb6+vnfv3vvss094bJMhV2NoWxhmh/a88sormUwmFJX/LuDv8eCDD1533XXhUA/fI8s88bEioAMAAB+8qqqqioqKHtkYTSaTyc0vmD179g033PDKK69s2rSppKRkl112GT9+/KWXXjpgwIAe2fDQv/3bv917771h05w5c4466qj8Mv/lX/7lxz/+cSj2t7/97ZAhQ+66664f/vCHNTU18+fPj2YTvP3221OnTp03b96aNWtSqVR1dfXOO+88bty4r3/967vvvnso/J133vna174Wtp511lkzZ87Mlbxu3brQqvvvv3/VqlVNTU09e/YcNGjQ6aefPnny5PxlRKIae/fu/eyzzz788MM33XRTKDCkh1q++c1vXnDBBQWeRsFHzAsvvHDdddeFQys8F8rhY8htywEAoHAymUxpaWn79N/85jdRsGPXXXfNhTmmT59+2mmnzZ8/v6WlJYxXKysrV61aNWPGjAkTJqxdu7ZH9pKos846q1evXiUlJaGE/ALXrFnz9NNPl5WVHXvssQcddFBIqaioKC8vD5mj5Y0bGxvPPvvsu+66669//WsouaamJp1OL1u27Prrr7/kkkuiZZuLi4tDvaGQ/DDNunXrJk6ceO211y5fvjzUGzKEBi9evPiyyy4788wzQ7G5nBVZ/fv3v+KKK6ZMmRJ27NmzZ0hZv379pZde+otf/MLxQPesXLkyHKXHHXdcOOzDEfWBr0b85ptvzp07t7W11UdDIZmhAwAAhVNaWvrGG2889NBD+Yl/+tOfbrvttkQiUVRU9JWvfCVKnD9//uWXX57JZA455JApU6bsuuuuqVTq7rvvnjVrVtj03e9+d8aMGSH/QQcdNGrUqGefffbJJ59cu3btjjvuGO3+xBNPrFixoqSk5JRTTumwJc8880zYpVevXueff/7JJ5/cI7u+T2jY7NmzJ0+eHE0Xai+04dJLLw1j1zCEPvHEE7/1rW+FnOvWrfvhD384b968++67b88995w2bVouf3Fxcdi6cOHCn/3sZyNGjEgmkzfffPOvfvWr0LCZM2eGErZUEXSooaHhzjvvvPXWW8P3qKqqqrq6+sPQqqlTp/7iF7948cUX99lnH58RBSOgAwAAhRNdABVdJJKTyMpkMtOmTTviiCOixBkzZmzevHnYsGG//vWv+/TpEyVee+21JSUlN9544+zZsy+88MLBgweHAidMmPDss8/+5S9/CSWfeuqpIVs6nQ4ZWlpawu7HHHNMhy1Zv359yNC/f/+zzjpr5513jhL33Xffiy66qJNB8ksvvfTggw+WlpYed9xxYVxdXPy/U/6HDx9+/PHHL1iw4Gc/+9mZZ56ZKzC8qZBn5syZuduxT58+fdGiRaGcFStWrF69etCgQY4KuujRRx/9wQ9+EI72srKyzq+x6nAe3PsnmphWX1/vM6KQBHQAAKBwMplMSUlJz54981+m0+nddtvtsssu+8IXvhCl//Wvf/3Tn/4UBqUDBw4Mw9eWlpYovaioaIcddqioqHjvvfdefvnlwYMHh8Rx48Zdf/31a9asefDBB6OAztKlS3//+9+HzMcee2z7tYojo0aN6t+//7vvvnv++edPmDBhjz32+MQnPtGvX7/Opzw8+eSTdXV15eXl5557bi6aE/Tp0+fMM88MiatWrQpVn3TSSVF6eGvhze6yyy65nFVVVf/wD/+wYMGCZDLZ1NTkkKArXnvtte9///u/+c1vWltbtzorJ5FIvPnmm+FLFL4sbQp5/fXXwzculxJKC0f+XnvtlZ+tsbHx6aefbm5uzj/CO8z5l7/8ZeHChdE0tFBpfn4oAAEdAAAonDBWPOmkky655JLo5ZIlS84+++y6urodd9wxF83pkV2nZsOGDVVVVfPnz3/kkUfySygtLQ3pqVRq9erVUcqgQYPGjBnz85///Lnnnvvzn/+82267zZ49O4xme/Xq9aUvfWlLLRkyZMj1118/derUX/3qV/fdd1/v3r1DGwYPHhyaN3HixC0tSrJy5cpMJhPGye1vU7X33nuHoXIY965atSo/PeRvs7ZItEhQUZZDgq26++67J0+eHN1PraysbKv5w9EbvgLDhg373ve+l3/oHn/88eEL0iZz+L489dRTAwcOzKX86Ec/mjJlSvti2+cMX+Tw3fmfcXVJSf5a5lAYAjoAAFA46XS6X79+YagZvQxP/v3f/33OnDlPP/30Aw88kJvYEl2EFUawp5566ne+852wV/tydtppp9zLiRMnht3feeedhx9+OAx9H3nkkVQqFS2v00ljTj/99MMPP/x3v/vd/Pnzw3B36dKljz/++KOPPjpv3rw77rijw9VtojkIofD2Tcpk5fJ0IsoGXTR27NiLL7541qxZa9euraqq2uoB1tLSMnz48COPPDI/cYcddrjgggv+8Ic/5IeEksnkgQce2GYiz/HHH//mm2+2maHTYc5TTjmlpKSkvLy8tbV11113jW4eBwUjoAMAAAWVSqXyX5599tmPP/54GBDedtttJ5xwQrT2x4ABA/r167dmzZqlS5fuscceW/3P/0EHHTRs2LAXXnghFLXffvu98sorYdQ6YcKEre44cODAiVnh+XvvvXfvvfdOnTr1l7/85Wmnndbh4jtDhgwJZb777ruLFy/ebbfd8jc9//zz4a0lEomQx6fMdrTLLrtcdtllJ5988vXXX//ggw82NDTkLlrsUFNT01FHHTV69Oj8xPLy8vOytlrd8OHDZ86c2ZWGnZTlA+KD4ho/AAD4IB1++OEHHnhgUVHR888/P3fu3Cixtrb2c5/7XCaTWbhw4eWXX56f/4033li+fHmbQqqrq0888cRQyMsvv3zFFVc0Njbutttu48aN67zqUPiKFStyL/v27XvkkUeWlZWFet96660OdznmmGMGDBiQSqVuvPHGDRs25LfqtttuCzsOHTr0gAMO8LGy3e2xxx6zZs26//77Dz744Pr6+mQyuaWc4YvQyVb4yDBDBwAAPkilpaVnnHHGf//3f6dSqRkzZowdOzaRSIT0c889d/bs2W+99db06dPXr18fzZdZsWJFeFlVVXXPPfcMHTo0v5wTTjghbNqwYUM0U+bYY4/t169fJ/UuWbIkulv5xIkToxBMU1PTzJkzGxoaampq9ttvvw73GjRo0Ne+9rVrrrlm/vz5EyZMOPvssysqKkLzbr755tDUTCZzzjnnbGkZZvj7HXHEEYcccsjdd98djvbXX389fBei7wt8DAnoAADAB2zcuHGf+cxnXn755Xnz5j311FNjxozpkb0Y6tZbbz3zzDOXL19+xx13zJo1q8f/Xa5VVlb29NNPtwno7LHHHocffvivf/3rysrK0tLSKFjTieeff37NmjUNDQ3XXHNNcXFxUVFRtAhOGB5/61vf+uxnP7ulHadMmRKadM8994SmhmbkdqyoqLjwwgvPOOMMHyjvq3D8T5o0afz48TfffPOdd965fv36nj17WpCYjyGXXAEAQCFkMpmWrDZr6PTIXjD1la98JZlMNjQ03HLLLc3NzVH66NGjH3300a9+9at77rlneXl5RUXF4MGDTz311JB45plntq/i5JNPDrXU1dXtv//+7SMyod5QRWhAtCbx6aef/sgjj4R6R40aVVNTE8rv27fvIYccctttt1199dX5bQ575bc55LzjjjtmzJgRModdwuh6xx13/NznPvfTn/407Ji/jmybGreaDl0XjrpwvD388MMnnnhiOJwaGxv1CR83RX5DAQC2ryNuWDLvj+/NvXLv0UNr9AY59fX10S2T+/Xrt8suu7TZGkakS5Ys6ZFd/mPo0KHR0sg577777urVq8OmsO/OO++8pSpaW1uXLl3a0tKyww47tM/2zjvvrF27NpFI7L777uXl5bn0DRs2hMLDviFx0KBB+VWHVoU2h8f+/fu3b3Oo6M0332xqaqqqqgpltm/PlmpctWrVunXr2qdD934/H3rooRtuuOHZZ5+tqKgIB3D4rk2aNGn69On6k482l1wBAEAhVFVVjRgxYktby8rKhg8fvqWt/bO2fnJfUrLXXnttaeuArPbpvbO21Ko999xzSwWGkXOby766WOMuWQ4Jtpfx48cfeeSRP/3pT2+66ab8db7ho80lVwAAAMRbZWXlOeecM3fu3G984xuJRKKhoUGf8JFnhg4AAAAfBZ/4xCduuOGGz3/+82+99Zbe4CNPQAcAAICPjsOy9AMfeS65AgAAAIgZAR0AAACAmBHQAQAAAIgZAR0AAACAmBHQAQAAAIgZAR0AAACAmBHQAQAAAIgZAR0AAACAmBHQAQAAAIgZAR0AAACAmBHQAQAAAIgZAR0AAACAmBHQAQAAAIgZAR0AAACAmBHQAQAAAIgZAR0AAACAmBHQAQAAAIgZAR0AAACAmBHQAQAA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" alt="Traffic management for a Knative application">
+</div>
+</div>
+<div class="paragraph">
+<p>Configuring a route allows requests to be sent to different revisions of a service. This routing is determined by the <code>traffic</code> spec of the <code>Service</code> object.</p>
+</div>
+<div class="paragraph">
+<p>A <code>traffic</code> spec declaration consists of one or more revisions, each responsible for handling a portion of the overall traffic. The percentages of traffic routed to each revision must add up to 100%, which is ensured by a Knative validation.</p>
+</div>
+<div class="paragraph">
+<p>The revisions specified in a <code>traffic</code> spec can either be a fixed, named revision, or can point to the “latest” revision, which tracks the head of the list of all revisions for the service. The "latest" revision is a type of floating reference that updates if a new revision is created. Each revision can have a tag attached that creates an additional access URL for that revision.</p>
+</div>
+<div class="paragraph">
+<p>The <code>traffic</code> spec can be modified by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Editing the YAML of a <code>Service</code> object directly.</p>
+</li>
+<li>
+<p>Using the Knative (<code>kn</code>) CLI <code>--traffic</code> flag.</p>
+</li>
+<li>
+<p>Using the OpenShift Container Platform web console.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you create a Knative service, it does not have any default <code>traffic</code> spec settings.</p>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://assets.openshift.net/content/modernizr.js" type="text/javascript"></script>
+  <script src="https://assets.openshift.net/content/subdomain.js" type="text/javascript"></script>
+  <script src="https://assets.openshift.net/content/nav-tertiary.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/reformat-html.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/hc-search.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/page-loader.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/clipboard.js" type="text/javascript"></script>
+  <script src="https://docs.openshift.com/container-platform/4.1/_javascripts/collapsible.js" type="text/javascript"></script>
+  <script>
+  var dk = 'openshift-serverless';
+  var version = 'Branch Build';
+
+  var distros = {
+    'openshift-origin': ['docs_origin', version],
+    // specific labels are used for OSD instead of the URL filter, due to its unusual URL structure; assume v4
+    'openshift-dedicated': ['docs_dedicated_v4'],
+    'openshift-online': ['docs_online', version],
+    'openshift-enterprise': ['docs_cp', version],
+    'openshift-aro' : ['docs_aro', version],
+    'openshift-rosa' : ['docs_rosa'],
+    'openshift-acs' : ['docs_acs', version]
+  };
+
+  // only OSD v3 docs have the version variable specified
+  if (dk == "openshift-dedicated" && version == "3") {
+    distros['openshift-dedicated'] = ['docs_dedicated_v3']
+  }
+
+  distros[dk] ? hcSearchCategory.apply(null, distros[dk]) : hcSearchCategory("docs");
+  </script>
+  <script type="text/javascript">
+  /*<![CDATA[*/
+  $(document).ready(function() {
+    $("[id^='topicGroup']").on('show.bs.collapse', function(event) {
+      if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+        $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+      }
+    });
+    $("[id^='topicGroup']").on('hide.bs.collapse', function(event) {
+      if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+        $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+      }
+    });
+    $("[id^='topicSubGroup']").on('show.bs.collapse', function() {
+      $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+    $("[id^='topicSubGroup']").on('hide.bs.collapse', function() {
+      $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+    $("[id^='topicSubSubGroup']").on('show.bs.collapse', function() {
+      $(this).parent().find("[id^='ssgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+    $("[id^='topicSubSubGroup']").on('hide.bs.collapse', function() {
+      $(this).parent().find("[id^='ssgSpan']").toggleClass("fa-caret-right fa-caret-down");
+    });
+
+    const collapsibleContent = document.getElementsByTagName("details");
+    for (var i = 0; i < collapsibleContent.length; i++) {
+      collapsibleContent[i].setAttribute("open", "");
+    }
+
+  });
+  /*]]>*/
+  </script>
+
+  <footer id="rh">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-2">
+                <img src="https://assets.openshift.com/hubfs/images/logos/Logo-RedHat-A-Reverse-RGB.svg" class="img-fluid" alt="Red Hat" style="height: 30px;">
+            </div>
+
+            <div class="col-sm-3">
+              <p class="text-nowrap">Copyright © 2023 Red Hat, Inc.</p>
+            </div>
+
+
+
+            <div class="col">
+                <nav class="nav">
+                    <a target="_blank" href="https://www.redhat.com/en/about/privacy-policy" class="nav-link">Privacy statement</a>
+                    <a target="_blank" href="https://www.openshift.com/legal/terms/" class="nav-link">Terms of use</a>
+                    <a target="_blank" href="https://www.redhat.com/en/about/all-policies-guidelines" class="nav-link">All policies and guidelines</a>
+                    <a id="teconsent"></a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="consent_blackbar" style="z-index: 100; position: fixed"></div>
+
+
+
+<!-- Adobe DTM -->
+<script type="text/javascript">
+if (("undefined" !== typeof _satellite) && ("function" === typeof _satellite.pageBottom)) {
+   _satellite.pageBottom();
+}
+</script>
+<!-- End Adobe DTM -->
+
+  <!-- adjust page css based on breadcrumb and/or resize -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => {
+      if ($(window).width() >= 1008) {
+        adjustSide();
+        adjustToc();
+        adjustMain();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if ($(window).width() >= 1008) {
+        adjustSide();
+        adjustToc();
+        adjustMain();
+      } else if ($(window).width() < 1008) {
+        sidebar.classList.remove('wide');
+        document.querySelector('#hc-search').classList.remove('wide');
+        if (sidebar.classList.contains('open')) {
+          sidebar.style.display = 'block';
+        } else {
+          sidebar.style.display = 'none';
+        }
+        document.querySelector('.main').style.paddingTop = '0px';
+      }
+    });
+
+    function adjustSide() {
+      sidebar.classList.add('wide');
+      document.querySelector('#hc-search').classList.add('wide');
+      sidebar.style.display = 'block';
+      document.querySelector('.sidebar').style.top = parseInt((document.querySelector('.breadcrumb').offsetHeight + 125), 10) + "px";
+      document.querySelector('#hc-search').style.top = parseInt((document.querySelector('.breadcrumb').offsetHeight + 95), 10) + "px";
+    }
+
+    function adjustToc() {
+      if (document.querySelector('#toc') !== null) {
+        document.querySelector('#toc').style.top = parseInt((document.querySelector('.breadcrumb').offsetHeight + 90), 10) + "px";
+      }
+    }
+
+    function adjustMain() {
+      document.querySelector('html').style.scrollPaddingTop = parseInt((document.querySelector('.breadcrumb').offsetHeight + 90), 10) + "px";
+      document.querySelector('.main').style.paddingTop = parseInt((document.querySelector('.breadcrumb').offsetHeight - 70), 10) + "px";
+    }
+
+  </script>
+
+  <!-- remove toc active class when page is loaded -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => {
+      var tocItems = $("#toc a");
+
+      for (let i = 0; i < tocItems.length; i++) {
+        tocItems[i].classList.remove("toc-active");
+      }
+    })
+  </script>
+
+  <!-- maintain sidebar scroll position between page loads -->
+  <script type="text/javascript">
+    let sidebar = document.querySelector(".sidebar");
+    let scrolltop = localStorage.getItem("sidebar-scroll");
+
+    if (scrolltop == null) {
+      sidebar.scrollTop = parseInt(top, 10);
+    }
+
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("sidebar-scroll", sidebar.scrollTop);
+    });
+
+    window.addEventListener('load', () => {
+      sidebar.scrollTo(0, scrolltop)
+    })
+  </script>
+
+  <!-- open/close the nav -->
+  <script type="text/javascript">
+    function closeNav() {
+      let sidebar = document.querySelector(".sidebar");
+      sidebar.style.display = "none";
+      sidebar.classList.remove('open');
+    }
+
+    function openNav() {
+      let sidebar = document.querySelector(".sidebar");
+      let hc_search = document.querySelector('#hc-search');
+      sidebar.style.display = "block";
+      sidebar.style.top = "0px";
+      hc_search.style.top = 'unset';
+      sidebar.classList.add('open');
+    }
+  </script>
+
+  <!-- clear and add toc-active to clicked toc link -->
+  <script type="text/javascript">
+  $("#toc a").click(function() {
+    var tocItems = $("#toc a");
+    for (let i = 0; i < tocItems.length; i++) {
+      tocItems[i].classList.remove("toc-active");
+    }
+    this.classList.add("toc-active");
+  });
+  </script>
+
+  <!-- update active toc class when mouse scrolls -->
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener("wheel", () => {
+
+        const ioConfiguration = {
+          "rootMargin": "-120px 0px -400px 0px",
+          "threshold": 0
+        };
+
+        const observer = new IntersectionObserver(setCurrent, ioConfiguration, entries => {
+          entries.forEach(entry => {
+            var id = entry.target.getAttribute('id');
+            //fight with js
+            document.querySelector(`#toc li a[href="#${id}"]`).classList.remove('toc-active');
+          });
+        });
+
+        //track all h1-4 headings that have an id
+        document.querySelectorAll('.main h2[id], .main h3[id]').forEach((h) => {
+          observer.observe(h);
+        });
+
+        //runs when the IntersectionObserver fires
+        function setCurrent(e) {
+          var allTocLinks = document.querySelectorAll("#toc li a");
+          if (allTocLinks !== undefined) {
+            e.map(i => {
+              if (i.isIntersecting && i.intersectionRatio >= 1) {
+                allTocLinks.forEach(link => link.classList.remove("toc-active"));
+                document.querySelector(`#toc li a[href="#${i.target.id}"]`).classList.add('toc-active')
+              }
+            })
+          }
+        };
+
+        //make clicked toc item active and stop IntersectionObserver
+        $("#toc a").click(function() {
+          //stop tracking all h1-4 headings that have an id
+          document.querySelectorAll('.main h2[id], .main h3[id]').forEach((h) => {
+            observer.unobserve(h);
+          });
+          var tocItems = $("#toc a");
+          if (tocItems !== undefined) {
+            for (let i = 0; i < tocItems.length; i++) {
+              tocItems[i].classList.remove("toc-active");
+            };
+            this.classList.add("toc-active");
+          }
+        })
+      })
+    })
+  </script>
+
+  <!--handle page scroll top and bottom, add toc-active -->
+  <script type="text/javascript">
+    document.addEventListener('scroll', () => {
+      //scroll to bottom
+      if(document.documentElement.scrollHeight === window.pageYOffset + window.innerHeight) {
+        var tocItems = $("#toc a");
+        for (let i = 0; i < tocItems.length; i++) {
+          tocItems[i].classList.remove("toc-active")
+          };
+          tocItems[tocItems.length - 1].classList.add("toc-active");
+        };
+      //scroll to top
+      if(window.pageYOffset === 0) {
+        var tocItems = $("#toc a");
+        for (let i = 0; i < tocItems.length; i++) {
+          tocItems[i].classList.remove("toc-active");
+          };
+          tocItems[0].classList.add("toc-active");
+        };
+      })
+  </script>
+
+  <!--adjust sidebar and toc when footer is displayed -->
+  <script type="text/javascript">
+    sidebar = document.querySelector('.sidebar')
+    toc = document.querySelector('#toc')
+    main = document.querySelector('.main')
+    okd_footer = document.querySelector('.footer-origin-docs')
+
+    //handle short pages
+    if (window.innerHeight === document.documentElement.scrollHeight) {
+      //sidebar
+      if (sidebar !== null && okd_footer == null) {
+        sidebar.style.marginBottom = "38px";
+        main.style.marginBottom = "35px";
+      };
+      //okd sidebar
+      if(sidebar !== null && okd_footer !== null) {
+        sidebar.style.marginBottom = "176px";
+        main.style.marginBottom = "135px";
+      }
+    };
+
+    //handle scrolling pages
+    document.addEventListener('scroll', () => {
+      //scroll to bottom
+      if ($(window).width() >= 1008) {
+        if(sidebar !== null) {
+          //pages with multiple toc entries
+          if(document.documentElement.scrollHeight === window.pageYOffset + window.innerHeight) {
+              //sidebar
+              if (sidebar !== null && okd_footer == null){
+                sidebar.style.marginBottom = "38px";
+                main.style.marginBottom = "35px";
+              };
+              //toc
+              if (toc !== null && okd_footer == null){
+                toc.style.bottom = "35px";
+              };
+              //okd sidebar
+              if(sidebar !== null && okd_footer !== null) {
+                sidebar.style.marginBottom = "176px";
+                main.style.marginBottom = "135px";
+              };
+              //okd toc
+              if (toc !== null && okd_footer !== null){
+                toc.style.bottom = "175px";
+              };
+            };
+          if(document.documentElement.scrollHeight != window.pageYOffset + window.innerHeight) {
+            sidebar.style.marginBottom = "0px";
+            if (toc !== null) {
+              toc.style.bottom = "0px";
+            }
+          }
+        }
+      }
+    })
+  </script>
+
+  <!-- adjust alerts on mobile -->
+  <script type="text/javascript">
+    alert = document.querySelector('#support-alert')
+    window.addEventListener("wheel", () => {
+      if ($(window).width() < 1008) {
+        //adjust alert
+        if(window.pageYOffset > 0) {
+          if(alert !== null) {
+            document.querySelector('#support-alert').style.position = "fixed";
+            document.querySelector('#support-alert').style.bottom = "0px";
+            document.querySelector('#support-alert').style.margin = "5px";
+            document.querySelector('#support-alert').style.zIndex = "9999999";
+          }
+        }
+      }
+   });
+    window.addEventListener('resize', () => {
+      if ($(window).width() >= 1008) {
+        if(alert !== null) {
+          document.querySelector('#support-alert').style.removeProperty('position');
+          document.querySelector('#support-alert').style.removeProperty('bottom');
+          document.querySelector('#support-alert').style.removeProperty('margin');
+          document.querySelector('#support-alert').style.removeProperty('zIndex');
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>
